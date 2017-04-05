@@ -1,6 +1,8 @@
 ﻿Option Explicit On
 Option Strict On
 
+'Test
+
 Public Class NPV_Calculator
 
     Dim amount As Integer
