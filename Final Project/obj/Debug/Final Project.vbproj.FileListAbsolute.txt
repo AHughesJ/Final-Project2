@@ -23,3 +23,11 @@ C:\Users\Andrew\Google Drive\Final Project\Final Project\bin\Debug\Final Project
 C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final Project.exe
 C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final Project.xml
 C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final Project.pdb
+C:\Users\Andrew\Google Drive\Final Project\Final Project\bin\Debug\Final Project.exe
+C:\Users\Andrew\Google Drive\Final Project\Final Project\bin\Debug\Final Project.pdb
+C:\Users\Andrew\Google Drive\Final Project\Final Project\bin\Debug\Final Project.xml
+C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final Project.vbprojResolveAssemblyReference.cache
+C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final_Project.RegCalc.resources
+C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final_Project.Resources.resources
+C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final_Project.NPV_Calculator.resources
+C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final Project.vbproj.GenerateResource.Cache
