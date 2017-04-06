@@ -25,17 +25,6 @@ Public Class NPV_Calculator
         Dim expCounter As Integer = 1   'Exponent counter, each period the denominator is raised by +1
 
 
-        'If txtDiscountRate.Text = "." Then 'Or CDec(txtDiscountRate.Text) < 0 Or CDec(txtDiscountRate.Text) > 1 Then
-        '    MessageBox.Show("Discount Rate is Invalid, insert rate between 0 and 1")
-        '    Me.Close()
-        'End If
-
-        'If discountRate < 0 Or discountRate > 1 Then
-        '    MessageBox.Show("Discount Rate is Invalid, insert rate between 0 and 1")
-        '    Me.Close()
-        'End If
-
-
 
         If (Not Decimal.TryParse(txtDiscountRate.Text, discountRate)) Then             'Validates Price input as a decimal
             lblStatus.Text = "Discount Rate is Invalid, insert rate between 0 and 1"
@@ -43,22 +32,29 @@ Public Class NPV_Calculator
             Return
         End If
 
+        discountRate = CDec(txtDiscountRate.Text)
 
-        'Try
-        '    discountRate = CDec(txtDiscountRate.Text)
-        '    If txtDiscountRate.Text = "." Then
-        '        lblStatus.Text = "Discount Rate is Invalid, insert rate between 0 and 1"
-        '        txtDiscountRate.Focus()
-        '    ElseIf discountRate < 0 Or discountRate > 1 Then
-        '        lblStatus.Text = "Discount Rate is Invalid, insert rate between 0 and 1"
-        '        txtDiscountRate.Focus()
-        '    End If
-        '    Return
-        'Catch ex As Exception
-        '    lblStatus.Text = "Discount Rate is Invalid, insert rate between 0 and 1"
-        'End Try
+        If discountRate >= 1 Or discountRate < 0 Then
+            lblStatus.Text = "Discount Rate is Invalid, insert rate between 0 and 1"
+            txtDiscountRate.Focus()
+            Return
+        End If
 
-        amount = CInt(txtCfQuantity.Text)           'assigns the user input to amount (amount of cashflow periods)
+        If (Not Integer.TryParse(txtCfQuantity.Text, amount)) Then             'Validates Price input as a decimal
+            lblStatus.Text = "Cash Flows input is invalid"
+            txtCfQuantity.Focus()
+            Return
+        End If
+
+        If amount <= 0 Then
+            lblStatus.Text = "Must input at least 1 cashflow"
+            txtCfQuantity.Focus()
+            Return
+        End If
+
+
+
+         amount = CInt(txtCfQuantity.Text)           'assigns the user input to amount (amount of cashflow periods)
 
 
         Dim Values(amount - 1) As Double            'amount variable input defines the array length, - 1 since vba counts 0

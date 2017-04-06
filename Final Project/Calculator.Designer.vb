@@ -303,7 +303,7 @@ Partial Class RegCalc
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "RegCalc"
-        Me.Text = "Form1"
+        Me.Text = "Calculator"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
