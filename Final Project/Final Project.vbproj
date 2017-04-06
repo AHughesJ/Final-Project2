@@ -99,6 +99,12 @@
     <Compile Include="NPV Calculator.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ProjectList.Designer.vb">
+      <DependentUpon>ProjectList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectList.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Calculator.resx">
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NPV Calculator.resx">
       <DependentUpon>NPV Calculator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectList.resx">
+      <DependentUpon>ProjectList.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -31,6 +31,8 @@ Partial Class NPV_Calculator
         Me.ProjectListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.lblCFO = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -105,11 +107,29 @@ Partial Class NPV_Calculator
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(0, 17)
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(124, 58)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.TabIndex = 6
+        '
+        'lblCFO
+        '
+        Me.lblCFO.AutoSize = True
+        Me.lblCFO.Location = New System.Drawing.Point(12, 61)
+        Me.lblCFO.Name = "lblCFO"
+        Me.lblCFO.Size = New System.Drawing.Size(99, 13)
+        Me.lblCFO.TabIndex = 7
+        Me.lblCFO.Text = "Insert Cash Outflow"
+        '
         'NPV_Calculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(315, 261)
+        Me.Controls.Add(Me.lblCFO)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.txtDiscountRate)
         Me.Controls.Add(Me.Label1)
@@ -138,4 +158,6 @@ Partial Class NPV_Calculator
     Friend WithEvents ProjectListToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents lblStatus As ToolStripStatusLabel
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents lblCFO As Label
 End Class

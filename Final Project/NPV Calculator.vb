@@ -1,7 +1,7 @@
 ﻿Option Explicit On
 Option Strict On
 
-
+'test
 
 Public Class NPV_Calculator
 
@@ -54,7 +54,7 @@ Public Class NPV_Calculator
 
 
 
-         amount = CInt(txtCfQuantity.Text)           'assigns the user input to amount (amount of cashflow periods)
+        amount = CInt(txtCfQuantity.Text)           'assigns the user input to amount (amount of cashflow periods)
 
 
         Dim Values(amount - 1) As Double            'amount variable input defines the array length, - 1 since vba counts 0
