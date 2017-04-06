@@ -12,6 +12,8 @@ Public Class NPV_Calculator
         lblStatus.Text = ""
         txtCfQuantity.Text = "0"
         txtDiscountRate.Text = "."
+        txtProjectName.Text = ""
+        txtInitialCashflow.Text = "-"
     End Sub
 
 
@@ -23,7 +25,20 @@ Public Class NPV_Calculator
         Dim EnteredCF As Double 'The Cashflow entered by the user 
         Dim CfAccumulator As Double = 0.00 'Accumulates the Cashflows after they are calculated
         Dim expCounter As Integer = 1   'Exponent counter, each period the denominator is raised by +1
+        Dim initialCFO As Double
 
+
+        If (Not Double.TryParse(txtInitialCashflow.Text, initialCFO)) Then
+            lblStatus.Text = "Initial Cash Outflow is Invalid, insert a negative number"
+            txtDiscountRate.Focus()
+            Return
+        End If
+
+        If initialCFO > 0 Then
+            lblStatus.Text = "Initial Cash Outflow should be negative"
+            txtInitialCashflow.Focus()
+            Return
+        End If
 
 
         If (Not Decimal.TryParse(txtDiscountRate.Text, discountRate)) Then             'Validates Price input as a decimal
@@ -40,6 +55,7 @@ Public Class NPV_Calculator
             Return
         End If
 
+
         If (Not Integer.TryParse(txtCfQuantity.Text, amount)) Then             'Validates Price input as a decimal
             lblStatus.Text = "Cash Flows input is invalid"
             txtCfQuantity.Focus()
@@ -51,8 +67,6 @@ Public Class NPV_Calculator
             txtCfQuantity.Focus()
             Return
         End If
-
-
 
         amount = CInt(txtCfQuantity.Text)           'assigns the user input to amount (amount of cashflow periods)
 
@@ -68,6 +82,8 @@ Public Class NPV_Calculator
             expCounter = expCounter + 1 'Increase exponent by 1 for each period
         Next
 
+        CfAccumulator = CfAccumulator + initialCFO
         lblStatus.Text = "The Net Present Value of this Project Is" & CfAccumulator
+
     End Sub
 End Class
