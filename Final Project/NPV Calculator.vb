@@ -7,6 +7,13 @@ Public Class NPV_Calculator
 
     Dim amount As Integer
     Dim discountRate As Decimal
+    Dim ProjectName As String
+
+    Dim EnteredCF As Double 'The Cashflow entered by the user 
+    Dim CfAccumulator As Double = 0.00 'Accumulates the Cashflows after they are calculated
+    Dim expCounter As Integer = 1   'Exponent counter, each period the denominator is raised by +1
+    Dim initialCFO As Double
+
 
     Public Sub Clear()
         lblStatus.Text = ""
@@ -22,11 +29,16 @@ Public Class NPV_Calculator
     End Sub
 
     Private Sub btnCalc_Click(sender As Object, e As EventArgs) Handles btnCalc.Click
-        Dim EnteredCF As Double 'The Cashflow entered by the user 
-        Dim CfAccumulator As Double = 0.00 'Accumulates the Cashflows after they are calculated
-        Dim expCounter As Integer = 1   'Exponent counter, each period the denominator is raised by +1
-        Dim initialCFO As Double
 
+
+
+        If txtProjectName.Text = "" Then
+            lblStatus.Text = "Insert a name for this project"
+            txtProjectName.Focus()
+            Return
+        End If
+
+        txtProjectName.Text = ProjectName
 
         If (Not Double.TryParse(txtInitialCashflow.Text, initialCFO)) Then
             lblStatus.Text = "Initial Cash Outflow is Invalid, insert a negative number"
