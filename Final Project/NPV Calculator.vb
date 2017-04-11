@@ -13,6 +13,7 @@ Public Class NPV_Calculator
     Dim CfAccumulator As Double = 0.00 'Accumulates the Cashflows after they are calculated
     Dim expCounter As Integer = 1   'Exponent counter, each period the denominator is raised by +1
     Dim initialCFO As Double
+    Dim decSelect As Integer = 2    'Base decimal place
 
 
     Public Sub Clear()
@@ -25,7 +26,17 @@ Public Class NPV_Calculator
 
 
     Private Sub NPV_Calculator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Clear()
+
+        cboDecimals.Items.Add(1)       'Filling combo box
+        cboDecimals.Items.Add(2)
+        cboDecimals.Items.Add(3)
+        cboDecimals.Items.Add(4)
+        cboDecimals.Items.Add(5)
+        cboDecimals.SelectedIndex = +1 'Displays to user that default decimal place is 2
+
+
     End Sub
 
     Private Sub btnCalc_Click(sender As Object, e As EventArgs) Handles btnCalc.Click
@@ -68,14 +79,14 @@ Public Class NPV_Calculator
         End If
 
 
-        If (Not Integer.TryParse(txtCfQuantity.Text, amount)) Then             'Validates Price input as a decimal
+        If (Not Integer.TryParse(txtCfQuantity.Text, amount)) Then             'Validates Cashflow quantity input as a integer
             lblStatus.Text = "Cash Flows input is invalid"
             txtCfQuantity.Focus()
             Return
         End If
 
-        If amount <= 0 Then
-            lblStatus.Text = "Must input at least 1 cashflow"
+        If amount <= 0 Then                                                     'Validates Cashflow quantity input as a positive integer
+            lblStatus.Text = "You cannot have negative Cash Flow periods"
             txtCfQuantity.Focus()
             Return
         End If
@@ -95,7 +106,12 @@ Public Class NPV_Calculator
         Next
 
         CfAccumulator = CfAccumulator + initialCFO
-        lblStatus.Text = "The Net Present Value of this Project Is" & CfAccumulator
+        CfAccumulator = Math.Round(CfAccumulator, decSelect) 'Rounds to user specified decimal places
+        lblStatus.Text = "The Net Present Value of this Project Is " & CfAccumulator.ToString()
 
+    End Sub
+
+    Private Sub cboDecimals_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDecimals.SelectedIndexChanged
+        decSelect = cboDecimals.SelectedIndex + 1 'Sets Decimal Places to users selected amount
     End Sub
 End Class

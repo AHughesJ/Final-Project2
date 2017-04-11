@@ -35,6 +35,8 @@ Partial Class NPV_Calculator
         Me.lblCFO = New System.Windows.Forms.Label()
         Me.lblProjectName = New System.Windows.Forms.Label()
         Me.txtProjectName = New System.Windows.Forms.TextBox()
+        Me.cboDecimals = New System.Windows.Forms.ComboBox()
+        Me.lblDes = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -85,7 +87,7 @@ Partial Class NPV_Calculator
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProjectListToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(315, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(349, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -100,7 +102,7 @@ Partial Class NPV_Calculator
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblStatus})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 256)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(315, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(349, 22)
         Me.StatusStrip1.TabIndex = 5
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -141,11 +143,30 @@ Partial Class NPV_Calculator
         Me.txtProjectName.Size = New System.Drawing.Size(100, 20)
         Me.txtProjectName.TabIndex = 9
         '
+        'cboDecimals
+        '
+        Me.cboDecimals.FormattingEnabled = True
+        Me.cboDecimals.Location = New System.Drawing.Point(283, 51)
+        Me.cboDecimals.Name = "cboDecimals"
+        Me.cboDecimals.Size = New System.Drawing.Size(45, 21)
+        Me.cboDecimals.TabIndex = 10
+        '
+        'lblDes
+        '
+        Me.lblDes.AutoSize = True
+        Me.lblDes.Location = New System.Drawing.Point(266, 35)
+        Me.lblDes.Name = "lblDes"
+        Me.lblDes.Size = New System.Drawing.Size(80, 13)
+        Me.lblDes.TabIndex = 11
+        Me.lblDes.Text = "Decimal Places"
+        '
         'NPV_Calculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(315, 278)
+        Me.ClientSize = New System.Drawing.Size(349, 278)
+        Me.Controls.Add(Me.lblDes)
+        Me.Controls.Add(Me.cboDecimals)
         Me.Controls.Add(Me.txtProjectName)
         Me.Controls.Add(Me.lblProjectName)
         Me.Controls.Add(Me.lblCFO)
@@ -182,4 +203,6 @@ Partial Class NPV_Calculator
     Friend WithEvents lblCFO As Label
     Friend WithEvents lblProjectName As Label
     Friend WithEvents txtProjectName As TextBox
+    Friend WithEvents cboDecimals As ComboBox
+    Friend WithEvents lblDes As Label
 End Class
