@@ -99,6 +99,7 @@
     <Compile Include="NPV Calculator.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Project.vb" />
     <Compile Include="ProjectList.Designer.vb">
       <DependentUpon>ProjectList.vb</DependentUpon>
     </Compile>

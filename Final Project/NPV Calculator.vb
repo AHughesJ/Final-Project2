@@ -15,6 +15,8 @@ Public Class NPV_Calculator
     Dim initialCFO As Double
     Dim decSelect As Integer = 2    'Base decimal place
 
+    Dim ProjectDescription As String
+
 
     Public Sub Clear()
         lblStatus.Text = ""
@@ -108,6 +110,16 @@ Public Class NPV_Calculator
         CfAccumulator = CfAccumulator + initialCFO
         CfAccumulator = Math.Round(CfAccumulator, decSelect) 'Rounds to user specified decimal places
         lblStatus.Text = "The Net Present Value of this Project Is " & CfAccumulator.ToString()
+
+        MsgBox("Add a Project Description?", vbYesNo)
+
+        If CBool(MsgBoxResult.Yes) Then
+            ProjectDescription = InputBox("", "Add Your Project Description:")
+            MsgBox(ProjectDescription) 'For test only
+        ElseIf CBool(MsgBoxResult.No) Then
+            ProjectDescription = ""
+            MsgBox(ProjectDescription) 'For test only
+        End If
 
     End Sub
 

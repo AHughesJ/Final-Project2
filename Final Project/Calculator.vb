@@ -9,7 +9,6 @@ Public Class RegCalc
 
     Dim Button As String
 
-
     Private Sub btn_Click(sender As Object, e As EventArgs) Handles btn0.Click, btn9.Click, btn8.Click, btn7.Click, btn6.Click, btn5.Click, btn4.Click, btn3.Click, btn2.Click, btn1.Click, btnDec.Click
         'Adds buttons 1-9, . 
         Dim b As Button = sender
