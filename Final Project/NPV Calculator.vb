@@ -1,7 +1,6 @@
 ﻿Option Explicit On
 Option Strict On
 
-'test1
 
 Public Class NPV_Calculator
 
@@ -14,6 +13,7 @@ Public Class NPV_Calculator
     Dim expCounter As Integer = 1   'Exponent counter, each period the denominator is raised by +1
     Dim initialCFO As Double
     Dim decSelect As Integer = 2    'Base decimal place
+    Dim projectId As Integer
 
     Dim ProjectDescription As String
 

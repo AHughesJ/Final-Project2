@@ -37,20 +37,22 @@ Partial Class NPV_Calculator
         Me.txtProjectName = New System.Windows.Forms.TextBox()
         Me.cboDecimals = New System.Windows.Forms.ComboBox()
         Me.lblDes = New System.Windows.Forms.Label()
+        Me.txtProjName = New System.Windows.Forms.TextBox()
+        Me.lblProjectId = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtCfQuantity
         '
-        Me.txtCfQuantity.Location = New System.Drawing.Point(124, 159)
+        Me.txtCfQuantity.Location = New System.Drawing.Point(124, 183)
         Me.txtCfQuantity.Name = "txtCfQuantity"
         Me.txtCfQuantity.Size = New System.Drawing.Size(100, 20)
         Me.txtCfQuantity.TabIndex = 0
         '
         'btnCalc
         '
-        Me.btnCalc.Location = New System.Drawing.Point(124, 198)
+        Me.btnCalc.Location = New System.Drawing.Point(125, 225)
         Me.btnCalc.Name = "btnCalc"
         Me.btnCalc.Size = New System.Drawing.Size(100, 36)
         Me.btnCalc.TabIndex = 1
@@ -60,7 +62,7 @@ Partial Class NPV_Calculator
         'lblCF
         '
         Me.lblCF.AutoSize = True
-        Me.lblCF.Location = New System.Drawing.Point(12, 162)
+        Me.lblCF.Location = New System.Drawing.Point(12, 186)
         Me.lblCF.Name = "lblCF"
         Me.lblCF.Size = New System.Drawing.Size(90, 13)
         Me.lblCF.TabIndex = 2
@@ -69,7 +71,7 @@ Partial Class NPV_Calculator
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 127)
+        Me.Label1.Location = New System.Drawing.Point(11, 150)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(107, 13)
         Me.Label1.TabIndex = 2
@@ -77,7 +79,7 @@ Partial Class NPV_Calculator
         '
         'txtDiscountRate
         '
-        Me.txtDiscountRate.Location = New System.Drawing.Point(125, 124)
+        Me.txtDiscountRate.Location = New System.Drawing.Point(124, 150)
         Me.txtDiscountRate.Name = "txtDiscountRate"
         Me.txtDiscountRate.Size = New System.Drawing.Size(100, 20)
         Me.txtDiscountRate.TabIndex = 3
@@ -100,7 +102,7 @@ Partial Class NPV_Calculator
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 256)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 284)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(349, 22)
         Me.StatusStrip1.TabIndex = 5
@@ -113,7 +115,7 @@ Partial Class NPV_Calculator
         '
         'txtInitialCashflow
         '
-        Me.txtInitialCashflow.Location = New System.Drawing.Point(124, 88)
+        Me.txtInitialCashflow.Location = New System.Drawing.Point(124, 117)
         Me.txtInitialCashflow.Name = "txtInitialCashflow"
         Me.txtInitialCashflow.Size = New System.Drawing.Size(100, 20)
         Me.txtInitialCashflow.TabIndex = 6
@@ -121,7 +123,7 @@ Partial Class NPV_Calculator
         'lblCFO
         '
         Me.lblCFO.AutoSize = True
-        Me.lblCFO.Location = New System.Drawing.Point(12, 91)
+        Me.lblCFO.Location = New System.Drawing.Point(12, 117)
         Me.lblCFO.Name = "lblCFO"
         Me.lblCFO.Size = New System.Drawing.Size(99, 13)
         Me.lblCFO.TabIndex = 7
@@ -130,7 +132,7 @@ Partial Class NPV_Calculator
         'lblProjectName
         '
         Me.lblProjectName.AutoSize = True
-        Me.lblProjectName.Location = New System.Drawing.Point(12, 51)
+        Me.lblProjectName.Location = New System.Drawing.Point(12, 84)
         Me.lblProjectName.Name = "lblProjectName"
         Me.lblProjectName.Size = New System.Drawing.Size(74, 13)
         Me.lblProjectName.TabIndex = 8
@@ -138,7 +140,7 @@ Partial Class NPV_Calculator
         '
         'txtProjectName
         '
-        Me.txtProjectName.Location = New System.Drawing.Point(124, 48)
+        Me.txtProjectName.Location = New System.Drawing.Point(124, 84)
         Me.txtProjectName.Name = "txtProjectName"
         Me.txtProjectName.Size = New System.Drawing.Size(100, 20)
         Me.txtProjectName.TabIndex = 9
@@ -160,11 +162,29 @@ Partial Class NPV_Calculator
         Me.lblDes.TabIndex = 11
         Me.lblDes.Text = "Decimal Places"
         '
+        'txtProjName
+        '
+        Me.txtProjName.Location = New System.Drawing.Point(124, 51)
+        Me.txtProjName.Name = "txtProjName"
+        Me.txtProjName.Size = New System.Drawing.Size(100, 20)
+        Me.txtProjName.TabIndex = 12
+        '
+        'lblProjectId
+        '
+        Me.lblProjectId.AutoSize = True
+        Me.lblProjectId.Location = New System.Drawing.Point(12, 51)
+        Me.lblProjectId.Name = "lblProjectId"
+        Me.lblProjectId.Size = New System.Drawing.Size(57, 13)
+        Me.lblProjectId.TabIndex = 13
+        Me.lblProjectId.Text = "Project ID:"
+        '
         'NPV_Calculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(349, 278)
+        Me.ClientSize = New System.Drawing.Size(349, 306)
+        Me.Controls.Add(Me.lblProjectId)
+        Me.Controls.Add(Me.txtProjName)
         Me.Controls.Add(Me.lblDes)
         Me.Controls.Add(Me.cboDecimals)
         Me.Controls.Add(Me.txtProjectName)
@@ -205,4 +225,6 @@ Partial Class NPV_Calculator
     Friend WithEvents txtProjectName As TextBox
     Friend WithEvents cboDecimals As ComboBox
     Friend WithEvents lblDes As Label
+    Friend WithEvents txtProjName As TextBox
+    Friend WithEvents lblProjectId As Label
 End Class
