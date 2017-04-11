@@ -111,16 +111,13 @@ Public Class NPV_Calculator
         CfAccumulator = Math.Round(CfAccumulator, decSelect) 'Rounds to user specified decimal places
         lblStatus.Text = "The Net Present Value of this Project Is " & CfAccumulator.ToString()
 
-        MsgBox("Add a Project Description?", vbYesNo)
+        Dim result As Integer = MsgBox("Add a Project Description?", vbYesNo)
 
-        If CBool(MsgBoxResult.Yes) Then
+        If result = DialogResult.No Then
+            ProjectDescription = " "
+        ElseIf result = DialogResult.Yes Then
             ProjectDescription = InputBox("", "Add Your Project Description:")
-            MsgBox(ProjectDescription) 'For test only
-        ElseIf CBool(MsgBoxResult.No) Then
-            ProjectDescription = ""
-            MsgBox(ProjectDescription) 'For test only
         End If
-
     End Sub
 
     Private Sub cboDecimals_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDecimals.SelectedIndexChanged
