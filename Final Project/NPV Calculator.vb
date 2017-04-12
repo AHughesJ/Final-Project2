@@ -24,6 +24,7 @@ Public Class NPV_Calculator
         txtDiscountRate.Text = "."
         txtProjectName.Text = ""
         txtInitialCashflow.Text = "-"
+        cboDecimals.Items.Clear()
     End Sub
 
 
@@ -100,7 +101,11 @@ Public Class NPV_Calculator
 
         For Each amount As Decimal In Values 'displays input message boxes = the quantity of cash flow periods
 
-            EnteredCF = CDbl(InputBox("Enter The Cashflow for this period", "Cash Flow", "0"))
+            Try
+                EnteredCF = CDbl(InputBox("Enter The Cashflow for this period", "Cash Flow", "0"))
+            Catch ex As Exception
+                Exit Sub
+            End Try
 
             CfAccumulator = CfAccumulator + CDbl(EnteredCF / (1 + discountRate) ^ expCounter) 'need to add array loop here to calculate denominator 
 
