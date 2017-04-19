@@ -3,27 +3,35 @@ Option Explicit On
 
 Public Class Project
 
-    Private mID As Integer
-    Private mName As String
-    Private mInitialCFO As Double
-    Private mDiscountRate As Decimal
-    Private mCfPeriods As Integer
-    Private mNPV As Double          'CfAccumulator
-    Private mDescription As String
+    Private Adapter As New SavedProjectsDataSetTableAdapters.SavedProjectsTableAdapter
 
+    Public Shared Property LastError As String
 
-    Public Sub New(ByVal pID As Integer, ByVal pName As String,
-                    ByVal pInitialCFO As Double, ByVal pDiscountRate As Decimal, ByVal pCfPeriods As Integer,
-                   ByVal pNPV As Double, Optional ByVal pDescription As String = "")
+    Public Function Insert(ByVal ProjectId As Short, ByVal Name As String,
+                    ByVal InitialCFO As Decimal, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer,
+                   ByVal NPV As Decimal, Optional ByVal Description As String = "") As Boolean
+        Try
+            LastError = String.Empty
+            Adapter.Insert(ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, Description)
+            Return True
+        Catch ex As Exception
+            LastError = ex.Message
+            Return False
+        End Try
+    End Function
 
-        mID = pID
-        mName = pName
-        mInitialCFO = pInitialCFO
-        mDiscountRate = pDiscountRate
-        mCfPeriods = pCfPeriods
-        mNPV = pNPV
-        mDescription = pDescription
+    'Public Function Update(ByVal ProjectId As Short, ByVal Name As String,
+    '               ByVal InitialCFO As Decimal, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer,
+    '              ByVal NPV As Decimal, Optional ByVal Description As String = "") As Boolean
+    '    Try
+    '        LastError = String.Empty
+    '        Adapter.Update(ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, Description)
+    '        Return True
+    '    Catch ex As Exception
+    '        LastError = ex.Message
+    '        Return False
+    '    End Try
+    'End Function
 
-    End Sub
 
 End Class
