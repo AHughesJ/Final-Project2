@@ -13,9 +13,10 @@ Public Class NPV_Calculator
     Dim expCounter As Integer = 1   'Exponent counter, each period the denominator is raised by +1
     Dim initialCFO As Double
     Dim decSelect As Integer = 2    'Base decimal place
-    Dim projectId As Integer
-
+    Dim projectId As Short
     Dim ProjectDescription As String
+
+    Dim mProject As New Project
 
 
     Public Sub Clear()
@@ -47,13 +48,17 @@ Public Class NPV_Calculator
         expCounter = 1 'Resetting the counter incase multiple calculations are ran in one setting
         CfAccumulator = 0.00
 
-        If txtProjectName.Text = "" Then
+        ProjectName = txtProjectName.Text
+
+        If ProjectName = "" Then
             lblStatus.Text = "Insert a name for this project"
             txtProjectName.Focus()
             Return
         End If
 
-        txtProjectName.Text = ProjectName
+        ' ProjectName = txtProjectName.Text
+        'txtProjectName.Text = ProjectName
+
 
         If (Not Double.TryParse(txtInitialCashflow.Text, initialCFO)) Then
             lblStatus.Text = "Initial Cash Outflow is Invalid, insert a negative number"
@@ -120,7 +125,7 @@ Public Class NPV_Calculator
         Dim result As Integer = MsgBox("Add a Project Description?", vbYesNo)
 
         If result = DialogResult.No Then
-            ProjectDescription = " "
+            ProjectDescription = ""
         ElseIf result = DialogResult.Yes Then
             ProjectDescription = InputBox("", "Add Your Project Description:")
         End If
@@ -132,5 +137,14 @@ Public Class NPV_Calculator
 
     Private Sub ProjectListToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProjectListToolStripMenuItem.Click
         ProjectList.ShowDialog()
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+        If mProject.Insert(projectId, ProjectName, CDec(initialCFO), discountRate, amount, CDec(CfAccumulator), ProjectDescription) Then
+            lblStatus.Text = "Project successfully saved"
+        Else
+            lblStatus.Text = "Unable to save project"
+        End If
     End Sub
 End Class

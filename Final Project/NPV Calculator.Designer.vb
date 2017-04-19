@@ -39,6 +39,7 @@ Partial Class NPV_Calculator
         Me.lblDes = New System.Windows.Forms.Label()
         Me.txtProjName = New System.Windows.Forms.TextBox()
         Me.lblProjectId = New System.Windows.Forms.Label()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -52,7 +53,7 @@ Partial Class NPV_Calculator
         '
         'btnCalc
         '
-        Me.btnCalc.Location = New System.Drawing.Point(125, 225)
+        Me.btnCalc.Location = New System.Drawing.Point(34, 225)
         Me.btnCalc.Name = "btnCalc"
         Me.btnCalc.Size = New System.Drawing.Size(100, 36)
         Me.btnCalc.TabIndex = 1
@@ -178,11 +179,21 @@ Partial Class NPV_Calculator
         Me.lblProjectId.TabIndex = 13
         Me.lblProjectId.Text = "Project ID:"
         '
+        'btnSave
+        '
+        Me.btnSave.Location = New System.Drawing.Point(228, 225)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(100, 36)
+        Me.btnSave.TabIndex = 14
+        Me.btnSave.Text = "Save"
+        Me.btnSave.UseVisualStyleBackColor = True
+        '
         'NPV_Calculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(349, 306)
+        Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.lblProjectId)
         Me.Controls.Add(Me.txtProjName)
         Me.Controls.Add(Me.lblDes)
@@ -227,4 +238,5 @@ Partial Class NPV_Calculator
     Friend WithEvents lblDes As Label
     Friend WithEvents txtProjName As TextBox
     Friend WithEvents lblProjectId As Label
+    Friend WithEvents btnSave As Button
 End Class

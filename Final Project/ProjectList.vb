@@ -29,7 +29,7 @@ Public Class ProjectList
 
     Private Sub cboProjectName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboProjectName.SelectedIndexChanged
 
-        If Not Formloading Then
+        If Not Formloading Then                 'If the form isn't loading, then display when a new index is selected
             Dim ProjectID As Short = CShort(cboProjectName.ComboBox.SelectedValue)
             dgvSavedProjects.DataSource = mProjects.FindById(ProjectID)
         End If
