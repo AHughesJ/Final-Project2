@@ -20,9 +20,9 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("SavedProjectsDataSet"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("SavedProjects"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class SavedProjectsDataSet
+Partial Public Class SavedProjects
     Inherits Global.System.Data.DataSet
     
     Private tableSavedProjects As SavedProjectsDataTable
@@ -80,7 +80,7 @@ Partial Public Class SavedProjectsDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property SavedProjects() As SavedProjectsDataTable
+    Public ReadOnly Property _SavedProjects() As SavedProjectsDataTable
         Get
             Return Me.tableSavedProjects
         End Get
@@ -128,7 +128,7 @@ Partial Public Class SavedProjectsDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As SavedProjectsDataSet = CType(MyBase.Clone,SavedProjectsDataSet)
+        Dim cln As SavedProjects = CType(MyBase.Clone,SavedProjects)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -199,9 +199,9 @@ Partial Public Class SavedProjectsDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "SavedProjectsDataSet"
+        Me.DataSetName = "SavedProjects"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/SavedProjectsDataSet.xsd"
+        Me.Namespace = "http://tempuri.org/SavedProjects.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableSavedProjects = New SavedProjectsDataTable()
@@ -210,7 +210,7 @@ Partial Public Class SavedProjectsDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeSavedProjects() As Boolean
+    Private Function ShouldSerialize_SavedProjects() As Boolean
         Return false
     End Function
     
@@ -225,7 +225,7 @@ Partial Public Class SavedProjectsDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As SavedProjectsDataSet = New SavedProjectsDataSet()
+        Dim ds As SavedProjects = New SavedProjects()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -425,7 +425,7 @@ Partial Public Class SavedProjectsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddSavedProjectsRow(ByVal ProjectId As Short, ByVal Name As String, ByVal InitialCFO As Decimal, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Decimal, ByVal mDescription As String) As SavedProjectsRow
+        Public Overloads Function AddSavedProjectsRow(ByVal ProjectId As Short, ByVal Name As String, ByVal InitialCFO As Double, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Double, ByVal mDescription As String) As SavedProjectsRow
             Dim rowSavedProjectsRow As SavedProjectsRow = CType(Me.NewRow,SavedProjectsRow)
             Dim columnValuesArray() As Object = New Object() {ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription}
             rowSavedProjectsRow.ItemArray = columnValuesArray
@@ -472,13 +472,13 @@ Partial Public Class SavedProjectsDataSet
             MyBase.Columns.Add(Me.columnProjectId)
             Me.columnName = New Global.System.Data.DataColumn("Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnName)
-            Me.columnInitialCFO = New Global.System.Data.DataColumn("InitialCFO", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnInitialCFO = New Global.System.Data.DataColumn("InitialCFO", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnInitialCFO)
             Me.columnDiscountRate = New Global.System.Data.DataColumn("DiscountRate", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDiscountRate)
             Me.columnCfPeriods = New Global.System.Data.DataColumn("CfPeriods", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCfPeriods)
-            Me.columnNPV = New Global.System.Data.DataColumn("NPV", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnNPV = New Global.System.Data.DataColumn("NPV", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNPV)
             Me.columnmDescription = New Global.System.Data.DataColumn("mDescription", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmDescription)
@@ -492,6 +492,8 @@ Partial Public Class SavedProjectsDataSet
             Me.columnCfPeriods.AllowDBNull = false
             Me.columnNPV.AllowDBNull = false
             Me.columnmDescription.MaxLength = 150
+            Me.ExtendedProperties.Add("Generator_TablePropName", "_SavedProjects")
+            Me.ExtendedProperties.Add("Generator_UserTableName", "SavedProjects")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -559,7 +561,7 @@ Partial Public Class SavedProjectsDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As SavedProjectsDataSet = New SavedProjectsDataSet()
+            Dim ds As SavedProjects = New SavedProjects()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -660,9 +662,9 @@ Partial Public Class SavedProjectsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property InitialCFO() As Decimal
+        Public Property InitialCFO() As Double
             Get
-                Return CType(Me(Me.tableSavedProjects.InitialCFOColumn),Decimal)
+                Return CType(Me(Me.tableSavedProjects.InitialCFOColumn),Double)
             End Get
             Set
                 Me(Me.tableSavedProjects.InitialCFOColumn) = value
@@ -693,9 +695,9 @@ Partial Public Class SavedProjectsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NPV() As Decimal
+        Public Property NPV() As Double
             Get
-                Return CType(Me(Me.tableSavedProjects.NPVColumn),Decimal)
+                Return CType(Me(Me.tableSavedProjects.NPVColumn),Double)
             End Get
             Set
                 Me(Me.tableSavedProjects.NPVColumn) = value
@@ -767,7 +769,7 @@ Partial Public Class SavedProjectsDataSet
     End Class
 End Class
 
-Namespace SavedProjectsDataSetTableAdapters
+Namespace SavedProjectsTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -906,20 +908,9 @@ Namespace SavedProjectsDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[SavedProjects] WHERE (([ProjectId] = @Original_ProjectId) AND "& _ 
-                "([Name] = @Original_Name) AND ([InitialCFO] = @Original_InitialCFO) AND ([Discou"& _ 
-                "ntRate] = @Original_DiscountRate) AND ([CfPeriods] = @Original_CfPeriods) AND (["& _ 
-                "NPV] = @Original_NPV) AND ((@IsNull_mDescription = 1 AND [mDescription] IS NULL)"& _ 
-                " OR ([mDescription] = @Original_mDescription)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM SavedProjects"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ProjectId = @ProjectId)"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProjectId", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProjectId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InitialCFO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "InitialCFO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DiscountRate", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "DiscountRate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CfPeriods", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CfPeriods", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NPV", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "NPV", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_mDescription", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mDescription", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_mDescription", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mDescription", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProjectId", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "ProjectId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[SavedProjects] ([ProjectId], [Name], [InitialCFO], [DiscountRa"& _ 
@@ -930,10 +921,10 @@ Namespace SavedProjectsDataSetTableAdapters
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProjectId", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProjectId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InitialCFO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "InitialCFO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InitialCFO", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InitialCFO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DiscountRate", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "DiscountRate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CfPeriods", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CfPeriods", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NPV", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "NPV", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NPV", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NPV", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mDescription", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mDescription", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
@@ -949,17 +940,17 @@ Namespace SavedProjectsDataSetTableAdapters
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProjectId", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProjectId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InitialCFO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "InitialCFO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InitialCFO", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InitialCFO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DiscountRate", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "DiscountRate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CfPeriods", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CfPeriods", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NPV", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "NPV", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NPV", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NPV", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mDescription", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mDescription", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProjectId", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProjectId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InitialCFO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "InitialCFO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InitialCFO", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InitialCFO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DiscountRate", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "DiscountRate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CfPeriods", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CfPeriods", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NPV", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "NPV", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NPV", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NPV", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_mDescription", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mDescription", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_mDescription", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mDescription", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
@@ -986,7 +977,7 @@ Namespace SavedProjectsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As SavedProjectsDataSet.SavedProjectsDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As SavedProjects.SavedProjectsDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -999,9 +990,9 @@ Namespace SavedProjectsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As SavedProjectsDataSet.SavedProjectsDataTable
+        Public Overloads Overridable Function GetData() As SavedProjects.SavedProjectsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As SavedProjectsDataSet.SavedProjectsDataTable = New SavedProjectsDataSet.SavedProjectsDataTable()
+            Dim dataTable As SavedProjects.SavedProjectsDataTable = New SavedProjects.SavedProjectsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1009,14 +1000,14 @@ Namespace SavedProjectsDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As SavedProjectsDataSet.SavedProjectsDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As SavedProjects.SavedProjectsDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As SavedProjectsDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As SavedProjects) As Integer
             Return Me.Adapter.Update(dataSet, "SavedProjects")
         End Function
         
@@ -1038,24 +1029,8 @@ Namespace SavedProjectsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ProjectId As Short, ByVal Original_Name As String, ByVal Original_InitialCFO As Decimal, ByVal Original_DiscountRate As Decimal, ByVal Original_CfPeriods As Integer, ByVal Original_NPV As Decimal, ByVal Original_mDescription As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ProjectId,Short)
-            If (Original_Name Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Name")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_Name,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_InitialCFO,Decimal)
-            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_DiscountRate,Decimal)
-            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_CfPeriods,Integer)
-            Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_NPV,Decimal)
-            If (Original_mDescription Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_mDescription,String)
-            End If
+        Public Overloads Overridable Function Delete(ByVal ProjectId As Short) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(ProjectId,Short)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1075,17 +1050,17 @@ Namespace SavedProjectsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal ProjectId As Short, ByVal Name As String, ByVal InitialCFO As Decimal, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Decimal, ByVal mDescription As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal ProjectId As Short, ByVal Name As String, ByVal InitialCFO As Double, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Double, ByVal mDescription As String) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(ProjectId,Short)
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(Name,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(InitialCFO,Decimal)
+            Me.Adapter.InsertCommand.Parameters(2).Value = CType(InitialCFO,Double)
             Me.Adapter.InsertCommand.Parameters(3).Value = CType(DiscountRate,Decimal)
             Me.Adapter.InsertCommand.Parameters(4).Value = CType(CfPeriods,Integer)
-            Me.Adapter.InsertCommand.Parameters(5).Value = CType(NPV,Decimal)
+            Me.Adapter.InsertCommand.Parameters(5).Value = CType(NPV,Double)
             If (mDescription Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
@@ -1110,17 +1085,17 @@ Namespace SavedProjectsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal ProjectId As Short, ByVal Name As String, ByVal InitialCFO As Decimal, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Decimal, ByVal mDescription As String, ByVal Original_ProjectId As Short, ByVal Original_Name As String, ByVal Original_InitialCFO As Decimal, ByVal Original_DiscountRate As Decimal, ByVal Original_CfPeriods As Integer, ByVal Original_NPV As Decimal, ByVal Original_mDescription As String) As Integer
+        Public Overloads Overridable Function Update(ByVal ProjectId As Short, ByVal Name As String, ByVal InitialCFO As Double, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Double, ByVal mDescription As String, ByVal Original_ProjectId As Short, ByVal Original_Name As String, ByVal Original_InitialCFO As Double, ByVal Original_DiscountRate As Decimal, ByVal Original_CfPeriods As Integer, ByVal Original_NPV As Double, ByVal Original_mDescription As String) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(ProjectId,Short)
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Name,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(InitialCFO,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(InitialCFO,Double)
             Me.Adapter.UpdateCommand.Parameters(3).Value = CType(DiscountRate,Decimal)
             Me.Adapter.UpdateCommand.Parameters(4).Value = CType(CfPeriods,Integer)
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(NPV,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(NPV,Double)
             If (mDescription Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
@@ -1132,10 +1107,10 @@ Namespace SavedProjectsDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Name,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_InitialCFO,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_InitialCFO,Double)
             Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_DiscountRate,Decimal)
             Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_CfPeriods,Integer)
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_NPV,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_NPV,Double)
             If (Original_mDescription Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
@@ -1162,7 +1137,7 @@ Namespace SavedProjectsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Name As String, ByVal InitialCFO As Decimal, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Decimal, ByVal mDescription As String, ByVal Original_ProjectId As Short, ByVal Original_Name As String, ByVal Original_InitialCFO As Decimal, ByVal Original_DiscountRate As Decimal, ByVal Original_CfPeriods As Integer, ByVal Original_NPV As Decimal, ByVal Original_mDescription As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Name As String, ByVal InitialCFO As Double, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Double, ByVal mDescription As String, ByVal Original_ProjectId As Short, ByVal Original_Name As String, ByVal Original_InitialCFO As Double, ByVal Original_DiscountRate As Decimal, ByVal Original_CfPeriods As Integer, ByVal Original_NPV As Double, ByVal Original_mDescription As String) As Integer
             Return Me.Update(Original_ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription, Original_ProjectId, Original_Name, Original_InitialCFO, Original_DiscountRate, Original_CfPeriods, Original_NPV, Original_mDescription)
         End Function
     End Class
@@ -1259,10 +1234,10 @@ Namespace SavedProjectsDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As SavedProjectsDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As SavedProjects, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._savedProjectsTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SavedProjects.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet._SavedProjects.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
@@ -1278,10 +1253,10 @@ Namespace SavedProjectsDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As SavedProjectsDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As SavedProjects, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._savedProjectsTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.SavedProjects.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                Dim addedRows() As Global.System.Data.DataRow = dataSet._SavedProjects.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._savedProjectsTableAdapter.Update(addedRows))
@@ -1296,10 +1271,10 @@ Namespace SavedProjectsDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As SavedProjectsDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As SavedProjects, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._savedProjectsTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SavedProjects.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet._SavedProjects.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._savedProjectsTableAdapter.Update(deletedRows))
@@ -1340,7 +1315,7 @@ Namespace SavedProjectsDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As SavedProjectsDataSet) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As SavedProjects) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If

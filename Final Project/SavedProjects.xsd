@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="SavedProjectsDataSet" targetNamespace="http://tempuri.org/SavedProjectsDataSet.xsd" xmlns:mstns="http://tempuri.org/SavedProjectsDataSet.xsd" xmlns="http://tempuri.org/SavedProjectsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="SavedProjects" targetNamespace="http://tempuri.org/SavedProjects.xsd" xmlns:mstns="http://tempuri.org/SavedProjects.xsd" xmlns="http://tempuri.org/SavedProjects.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -35,7 +35,7 @@ SELECT ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription F
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription FROM dbo.SavedProjects</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -81,10 +81,10 @@ SELECT ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription F
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="SavedProjectsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SavedProjectsDataSet" msprop:Generator_UserDSName="SavedProjectsDataSet">
+  <xs:element name="SavedProjects" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SavedProjects" msprop:Generator_UserDSName="SavedProjects">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SavedProjects" msprop:Generator_TableClassName="SavedProjectsDataTable" msprop:Generator_TableVarName="tableSavedProjects" msprop:Generator_TablePropName="SavedProjects" msprop:Generator_RowDeletingName="SavedProjectsRowDeleting" msprop:Generator_RowChangingName="SavedProjectsRowChanging" msprop:Generator_RowEvHandlerName="SavedProjectsRowChangeEventHandler" msprop:Generator_RowDeletedName="SavedProjectsRowDeleted" msprop:Generator_UserTableName="SavedProjects" msprop:Generator_RowChangedName="SavedProjectsRowChanged" msprop:Generator_RowEvArgName="SavedProjectsRowChangeEvent" msprop:Generator_RowClassName="SavedProjectsRow">
+        <xs:element name="SavedProjects" msprop:Generator_TableClassName="SavedProjectsDataTable" msprop:Generator_TableVarName="tableSavedProjects" msprop:Generator_TablePropName="_SavedProjects" msprop:Generator_RowDeletingName="SavedProjectsRowDeleting" msprop:Generator_RowChangingName="SavedProjectsRowChanging" msprop:Generator_RowEvHandlerName="SavedProjectsRowChangeEventHandler" msprop:Generator_RowDeletedName="SavedProjectsRowDeleted" msprop:Generator_UserTableName="SavedProjects" msprop:Generator_RowChangedName="SavedProjectsRowChanged" msprop:Generator_RowEvArgName="SavedProjectsRowChangeEvent" msprop:Generator_RowClassName="SavedProjectsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ProjectId" msprop:Generator_ColumnVarNameInTable="columnProjectId" msprop:Generator_ColumnPropNameInRow="ProjectId" msprop:Generator_ColumnPropNameInTable="ProjectIdColumn" msprop:Generator_UserColumnName="ProjectId" type="xs:short" />
