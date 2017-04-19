@@ -7,8 +7,7 @@ Public Class ProjectList
     Private Formloading As Boolean = True
 
     Private Sub ProjectList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'SavedProjectsDataSet.SavedProjects' table. You can move, or remove it, as needed.
-        Me.SavedProjectsTableAdapter.Fill(Me.SavedProjectsDataSet.SavedProjects)
+        Me.SavedProjectsTableAdapter.Fill(Me.SavedProjects._SavedProjects)
 
         With cboProjectName.ComboBox
             .DataSource = mProjects.AllProjects
@@ -40,16 +39,16 @@ Public Class ProjectList
         Me.Close()
     End Sub
 
-    'Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
 
-    '    If dgvSavedProjects.SelectedRows.Count > 0 Then
-    '        Dim ProjectId As Short = CShort(dgvSavedProjects.SelectedRows(0).Cells(0).Value)
-    '        If mProjects.Delete(ProjectId) Then
-    '            dgvSavedProjects.DataSource = mProjects.AllProjects
-    '        Else
-    '            MessageBox.Show("Unable to delete this appointment")
-    '        End If
-    '    End If
-    'End Sub
+        If dgvSavedProjects.SelectedRows.Count > 0 Then
+            Dim ProjectId As Short = CShort(dgvSavedProjects.SelectedRows(0).Cells(0).Value)
+            If mProjects.Delete(ProjectId) Then
+                dgvSavedProjects.DataSource = mProjects.AllProjects
+            Else
+                MessageBox.Show("Unable to delete this project")
+            End If
+        End If
+    End Sub
 
 End Class

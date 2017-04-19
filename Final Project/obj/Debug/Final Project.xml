@@ -22,67 +22,67 @@ Final Project
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="T:Final_Project.SavedProjectsDataSet">
+<member name="T:Final_Project.SavedProjects">
 <summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
 </member>
-<member name="T:Final_Project.SavedProjectsDataSet.SavedProjectsDataTable">
+<member name="T:Final_Project.SavedProjects.SavedProjectsDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:Final_Project.SavedProjectsDataSet.SavedProjectsRow">
+<member name="T:Final_Project.SavedProjects.SavedProjectsRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:Final_Project.SavedProjectsDataSet.SavedProjectsRowChangeEvent">
+<member name="T:Final_Project.SavedProjects.SavedProjectsRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:Final_Project.SavedProjectsDataSetTableAdapters.SavedProjectsTableAdapter">
+<member name="T:Final_Project.SavedProjectsTableAdapters.SavedProjectsTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:Final_Project.SavedProjectsDataSetTableAdapters.TableAdapterManager">
+<member name="T:Final_Project.SavedProjectsTableAdapters.TableAdapterManager">
 <summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
 </member>
-<member name="M:Final_Project.SavedProjectsDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Final_Project.SavedProjectsDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:Final_Project.SavedProjectsTableAdapters.TableAdapterManager.UpdateUpdatedRows(Final_Project.SavedProjects,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Update rows in top-down order.
 </summary>
 </member>
-<member name="M:Final_Project.SavedProjectsDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Final_Project.SavedProjectsDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:Final_Project.SavedProjectsTableAdapters.TableAdapterManager.UpdateInsertedRows(Final_Project.SavedProjects,System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Insert rows in top-down order.
 </summary>
 </member>
-<member name="M:Final_Project.SavedProjectsDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Final_Project.SavedProjectsDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:Final_Project.SavedProjectsTableAdapters.TableAdapterManager.UpdateDeletedRows(Final_Project.SavedProjects,System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Delete rows in bottom-up order.
 </summary>
 </member>
-<member name="M:Final_Project.SavedProjectsDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<member name="M:Final_Project.SavedProjectsTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
 <summary>
 Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
 </summary>
 </member>
-<member name="M:Final_Project.SavedProjectsDataSetTableAdapters.TableAdapterManager.UpdateAll(Final_Project.SavedProjectsDataSet)">
+<member name="M:Final_Project.SavedProjectsTableAdapters.TableAdapterManager.UpdateAll(Final_Project.SavedProjects)">
 <summary>
 Update all changes to the dataset.
 </summary>
 </member>
-<member name="T:Final_Project.SavedProjectsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<member name="T:Final_Project.SavedProjectsTableAdapters.TableAdapterManager.UpdateOrderOption">
 <summary>
 Update Order Option
 </summary>
 </member>
-<member name="T:Final_Project.SavedProjectsDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<member name="T:Final_Project.SavedProjectsTableAdapters.TableAdapterManager.SelfReferenceComparer">
 <summary>
 Used to sort self-referenced table's rows
 </summary>

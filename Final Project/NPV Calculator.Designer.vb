@@ -37,7 +37,7 @@ Partial Class NPV_Calculator
         Me.txtProjectName = New System.Windows.Forms.TextBox()
         Me.cboDecimals = New System.Windows.Forms.ComboBox()
         Me.lblDes = New System.Windows.Forms.Label()
-        Me.txtProjName = New System.Windows.Forms.TextBox()
+        Me.txtProjectId = New System.Windows.Forms.TextBox()
         Me.lblProjectId = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
@@ -163,12 +163,12 @@ Partial Class NPV_Calculator
         Me.lblDes.TabIndex = 11
         Me.lblDes.Text = "Decimal Places"
         '
-        'txtProjName
+        'txtProjectId
         '
-        Me.txtProjName.Location = New System.Drawing.Point(124, 51)
-        Me.txtProjName.Name = "txtProjName"
-        Me.txtProjName.Size = New System.Drawing.Size(100, 20)
-        Me.txtProjName.TabIndex = 12
+        Me.txtProjectId.Location = New System.Drawing.Point(124, 51)
+        Me.txtProjectId.Name = "txtProjectId"
+        Me.txtProjectId.Size = New System.Drawing.Size(100, 20)
+        Me.txtProjectId.TabIndex = 12
         '
         'lblProjectId
         '
@@ -195,7 +195,7 @@ Partial Class NPV_Calculator
         Me.ClientSize = New System.Drawing.Size(349, 306)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.lblProjectId)
-        Me.Controls.Add(Me.txtProjName)
+        Me.Controls.Add(Me.txtProjectId)
         Me.Controls.Add(Me.lblDes)
         Me.Controls.Add(Me.cboDecimals)
         Me.Controls.Add(Me.txtProjectName)
@@ -236,7 +236,7 @@ Partial Class NPV_Calculator
     Friend WithEvents txtProjectName As TextBox
     Friend WithEvents cboDecimals As ComboBox
     Friend WithEvents lblDes As Label
-    Friend WithEvents txtProjName As TextBox
+    Friend WithEvents txtProjectId As TextBox
     Friend WithEvents lblProjectId As Label
     Friend WithEvents btnSave As Button
 End Class

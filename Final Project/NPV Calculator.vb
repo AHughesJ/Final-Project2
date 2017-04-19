@@ -40,7 +40,6 @@ Public Class NPV_Calculator
         cboDecimals.Items.Add(5)
         cboDecimals.SelectedIndex = +1 'Displays to user that default decimal place is 2
 
-
     End Sub
 
     Private Sub btnCalc_Click(sender As Object, e As EventArgs) Handles btnCalc.Click
@@ -48,16 +47,14 @@ Public Class NPV_Calculator
         expCounter = 1 'Resetting the counter incase multiple calculations are ran in one setting
         CfAccumulator = 0.00
 
-        ProjectName = txtProjectName.Text
+        ProjectName = CStr(txtProjectName.Text)
+        projectId = CShort(txtProjectId.Text)
 
         If ProjectName = "" Then
             lblStatus.Text = "Insert a name for this project"
             txtProjectName.Focus()
             Return
         End If
-
-        ' ProjectName = txtProjectName.Text
-        'txtProjectName.Text = ProjectName
 
 
         If (Not Double.TryParse(txtInitialCashflow.Text, initialCFO)) Then
@@ -79,7 +76,7 @@ Public Class NPV_Calculator
             Return
         End If
 
-        discountRate = CDec(txtDiscountRate.Text)
+        ' discountRate = CDec(txtDiscountRate.Text)
 
         If discountRate >= 1 Or discountRate < 0 Then
             lblStatus.Text = "Discount Rate is Invalid, insert rate between 0 and 1"
@@ -100,7 +97,7 @@ Public Class NPV_Calculator
             Return
         End If
 
-        amount = CInt(txtCfQuantity.Text)           'assigns the user input to amount (amount of cashflow periods)
+        'amount = CInt(txtCfQuantity.Text)           'assigns the user input to amount (amount of cashflow periods)
 
 
         Dim Values(amount - 1) As Double            'amount variable input defines the array length, - 1 since vba counts 0
@@ -141,7 +138,10 @@ Public Class NPV_Calculator
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
-        If mProject.Insert(projectId, ProjectName, CDec(initialCFO), discountRate, amount, CDec(CfAccumulator), ProjectDescription) Then
+        ProjectName = CStr(txtProjectName.Text)
+        projectId = CShort(txtProjectId.Text)
+
+        If mProject.Insert(projectId, ProjectName, CDec(initialCFO), CDec(discountRate), amount, CDec(CfAccumulator), ProjectDescription) Then
             lblStatus.Text = "Project successfully saved"
         Else
             lblStatus.Text = "Unable to save project"

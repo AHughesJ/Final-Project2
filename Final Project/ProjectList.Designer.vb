@@ -24,17 +24,6 @@ Partial Class ProjectList
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProjectList))
-        Me.dgvSavedProjects = New System.Windows.Forms.DataGridView()
-        Me.ProjectIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.InitialCFODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DiscountRateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CfPeriodsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NPVDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SavedProjectsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SavedProjectsDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SavedProjectsDataSet = New Final_Project.SavedProjectsDataSet()
         Me.Tools = New System.Windows.Forms.ToolStrip()
         Me.btnAll = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
@@ -46,83 +35,22 @@ Partial Class ProjectList
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btnDelete = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.dgvSavedProjects = New System.Windows.Forms.DataGridView()
+        Me.SavedProjects = New Final_Project.SavedProjects()
         Me.SavedProjectsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SavedProjectsTableAdapter = New Final_Project.SavedProjectsDataSetTableAdapters.SavedProjectsTableAdapter()
-        CType(Me.dgvSavedProjects, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SavedProjectsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SavedProjectsDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SavedProjectsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SavedProjectsTableAdapter = New Final_Project.SavedProjectsTableAdapters.SavedProjectsTableAdapter()
+        Me.ProjectIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InitialCFODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DiscountRateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CfPeriodsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NPVDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tools.SuspendLayout()
+        CType(Me.dgvSavedProjects, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SavedProjects, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SavedProjectsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'dgvSavedProjects
-        '
-        Me.dgvSavedProjects.AutoGenerateColumns = False
-        Me.dgvSavedProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSavedProjects.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProjectIdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.InitialCFODataGridViewTextBoxColumn, Me.DiscountRateDataGridViewTextBoxColumn, Me.CfPeriodsDataGridViewTextBoxColumn, Me.NPVDataGridViewTextBoxColumn, Me.MDescriptionDataGridViewTextBoxColumn})
-        Me.dgvSavedProjects.DataSource = Me.SavedProjectsBindingSource1
-        Me.dgvSavedProjects.Location = New System.Drawing.Point(12, 39)
-        Me.dgvSavedProjects.Name = "dgvSavedProjects"
-        Me.dgvSavedProjects.Size = New System.Drawing.Size(759, 164)
-        Me.dgvSavedProjects.TabIndex = 3
-        '
-        'ProjectIdDataGridViewTextBoxColumn
-        '
-        Me.ProjectIdDataGridViewTextBoxColumn.DataPropertyName = "ProjectId"
-        Me.ProjectIdDataGridViewTextBoxColumn.HeaderText = "ProjectId"
-        Me.ProjectIdDataGridViewTextBoxColumn.Name = "ProjectIdDataGridViewTextBoxColumn"
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "Name"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        '
-        'InitialCFODataGridViewTextBoxColumn
-        '
-        Me.InitialCFODataGridViewTextBoxColumn.DataPropertyName = "InitialCFO"
-        Me.InitialCFODataGridViewTextBoxColumn.HeaderText = "InitialCFO"
-        Me.InitialCFODataGridViewTextBoxColumn.Name = "InitialCFODataGridViewTextBoxColumn"
-        '
-        'DiscountRateDataGridViewTextBoxColumn
-        '
-        Me.DiscountRateDataGridViewTextBoxColumn.DataPropertyName = "DiscountRate"
-        Me.DiscountRateDataGridViewTextBoxColumn.HeaderText = "DiscountRate"
-        Me.DiscountRateDataGridViewTextBoxColumn.Name = "DiscountRateDataGridViewTextBoxColumn"
-        '
-        'CfPeriodsDataGridViewTextBoxColumn
-        '
-        Me.CfPeriodsDataGridViewTextBoxColumn.DataPropertyName = "CfPeriods"
-        Me.CfPeriodsDataGridViewTextBoxColumn.HeaderText = "CfPeriods"
-        Me.CfPeriodsDataGridViewTextBoxColumn.Name = "CfPeriodsDataGridViewTextBoxColumn"
-        '
-        'NPVDataGridViewTextBoxColumn
-        '
-        Me.NPVDataGridViewTextBoxColumn.DataPropertyName = "NPV"
-        Me.NPVDataGridViewTextBoxColumn.HeaderText = "NPV"
-        Me.NPVDataGridViewTextBoxColumn.Name = "NPVDataGridViewTextBoxColumn"
-        '
-        'MDescriptionDataGridViewTextBoxColumn
-        '
-        Me.MDescriptionDataGridViewTextBoxColumn.DataPropertyName = "mDescription"
-        Me.MDescriptionDataGridViewTextBoxColumn.HeaderText = "mDescription"
-        Me.MDescriptionDataGridViewTextBoxColumn.Name = "MDescriptionDataGridViewTextBoxColumn"
-        '
-        'SavedProjectsBindingSource1
-        '
-        Me.SavedProjectsBindingSource1.DataMember = "SavedProjects"
-        Me.SavedProjectsBindingSource1.DataSource = Me.SavedProjectsDataSetBindingSource
-        '
-        'SavedProjectsDataSetBindingSource
-        '
-        Me.SavedProjectsDataSetBindingSource.DataSource = Me.SavedProjectsDataSet
-        Me.SavedProjectsDataSetBindingSource.Position = 0
-        '
-        'SavedProjectsDataSet
-        '
-        Me.SavedProjectsDataSet.DataSetName = "SavedProjectsDataSet"
-        Me.SavedProjectsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Tools
         '
@@ -201,14 +129,72 @@ Partial Class ProjectList
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 25)
         '
+        'dgvSavedProjects
+        '
+        Me.dgvSavedProjects.AutoGenerateColumns = False
+        Me.dgvSavedProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSavedProjects.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProjectIdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.InitialCFODataGridViewTextBoxColumn, Me.DiscountRateDataGridViewTextBoxColumn, Me.CfPeriodsDataGridViewTextBoxColumn, Me.NPVDataGridViewTextBoxColumn, Me.MDescriptionDataGridViewTextBoxColumn})
+        Me.dgvSavedProjects.DataSource = Me.SavedProjectsBindingSource
+        Me.dgvSavedProjects.Location = New System.Drawing.Point(12, 39)
+        Me.dgvSavedProjects.Name = "dgvSavedProjects"
+        Me.dgvSavedProjects.Size = New System.Drawing.Size(759, 164)
+        Me.dgvSavedProjects.TabIndex = 3
+        '
+        'SavedProjects
+        '
+        Me.SavedProjects.DataSetName = "SavedProjects"
+        Me.SavedProjects.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'SavedProjectsBindingSource
         '
         Me.SavedProjectsBindingSource.DataMember = "SavedProjects"
-        Me.SavedProjectsBindingSource.DataSource = Me.SavedProjectsDataSet
+        Me.SavedProjectsBindingSource.DataSource = Me.SavedProjects
         '
         'SavedProjectsTableAdapter
         '
         Me.SavedProjectsTableAdapter.ClearBeforeFill = True
+        '
+        'ProjectIdDataGridViewTextBoxColumn
+        '
+        Me.ProjectIdDataGridViewTextBoxColumn.DataPropertyName = "ProjectId"
+        Me.ProjectIdDataGridViewTextBoxColumn.HeaderText = "ProjectId"
+        Me.ProjectIdDataGridViewTextBoxColumn.Name = "ProjectIdDataGridViewTextBoxColumn"
+        '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "Name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "Name"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        '
+        'InitialCFODataGridViewTextBoxColumn
+        '
+        Me.InitialCFODataGridViewTextBoxColumn.DataPropertyName = "InitialCFO"
+        Me.InitialCFODataGridViewTextBoxColumn.HeaderText = "InitialCFO"
+        Me.InitialCFODataGridViewTextBoxColumn.Name = "InitialCFODataGridViewTextBoxColumn"
+        '
+        'DiscountRateDataGridViewTextBoxColumn
+        '
+        Me.DiscountRateDataGridViewTextBoxColumn.DataPropertyName = "DiscountRate"
+        Me.DiscountRateDataGridViewTextBoxColumn.HeaderText = "DiscountRate"
+        Me.DiscountRateDataGridViewTextBoxColumn.Name = "DiscountRateDataGridViewTextBoxColumn"
+        '
+        'CfPeriodsDataGridViewTextBoxColumn
+        '
+        Me.CfPeriodsDataGridViewTextBoxColumn.DataPropertyName = "CfPeriods"
+        Me.CfPeriodsDataGridViewTextBoxColumn.HeaderText = "CfPeriods"
+        Me.CfPeriodsDataGridViewTextBoxColumn.Name = "CfPeriodsDataGridViewTextBoxColumn"
+        '
+        'NPVDataGridViewTextBoxColumn
+        '
+        Me.NPVDataGridViewTextBoxColumn.DataPropertyName = "NPV"
+        Me.NPVDataGridViewTextBoxColumn.HeaderText = "NPV"
+        Me.NPVDataGridViewTextBoxColumn.Name = "NPVDataGridViewTextBoxColumn"
+        '
+        'MDescriptionDataGridViewTextBoxColumn
+        '
+        Me.MDescriptionDataGridViewTextBoxColumn.DataPropertyName = "mDescription"
+        Me.MDescriptionDataGridViewTextBoxColumn.HeaderText = "mDescription"
+        Me.MDescriptionDataGridViewTextBoxColumn.Name = "MDescriptionDataGridViewTextBoxColumn"
         '
         'ProjectList
         '
@@ -219,21 +205,15 @@ Partial Class ProjectList
         Me.Controls.Add(Me.dgvSavedProjects)
         Me.Name = "ProjectList"
         Me.Text = "ProjectList"
-        CType(Me.dgvSavedProjects, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SavedProjectsBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SavedProjectsDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SavedProjectsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tools.ResumeLayout(False)
         Me.Tools.PerformLayout()
+        CType(Me.dgvSavedProjects, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SavedProjects, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SavedProjectsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents dgvSavedProjects As DataGridView
-    Friend WithEvents SavedProjectsDataSet As SavedProjectsDataSet
-    Friend WithEvents SavedProjectsBindingSource As BindingSource
-    Friend WithEvents SavedProjectsTableAdapter As SavedProjectsDataSetTableAdapters.SavedProjectsTableAdapter
     Friend WithEvents Tools As ToolStrip
     Friend WithEvents btnAll As ToolStripButton
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
@@ -245,7 +225,10 @@ Partial Class ProjectList
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents btnDelete As ToolStripButton
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents SavedProjectsDataSetBindingSource As BindingSource
+    Friend WithEvents dgvSavedProjects As DataGridView
+    Friend WithEvents SavedProjects As SavedProjects
+    Friend WithEvents SavedProjectsBindingSource As BindingSource
+    Friend WithEvents SavedProjectsTableAdapter As SavedProjectsTableAdapters.SavedProjectsTableAdapter
     Friend WithEvents ProjectIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents InitialCFODataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -253,5 +236,4 @@ Partial Class ProjectList
     Friend WithEvents CfPeriodsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NPVDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MDescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SavedProjectsBindingSource1 As BindingSource
 End Class
