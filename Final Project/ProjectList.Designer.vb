@@ -24,6 +24,8 @@ Partial Class ProjectList
     Private Sub InitializeComponent()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
+        Me.dgvSavedProjects = New System.Windows.Forms.DataGridView()
+        CType(Me.dgvSavedProjects, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnUpdate
@@ -45,19 +47,30 @@ Partial Class ProjectList
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
+        'dgvSavedProjects
+        '
+        Me.dgvSavedProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSavedProjects.Location = New System.Drawing.Point(21, 26)
+        Me.dgvSavedProjects.Name = "dgvSavedProjects"
+        Me.dgvSavedProjects.Size = New System.Drawing.Size(240, 150)
+        Me.dgvSavedProjects.TabIndex = 3
+        '
         'ProjectList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.Controls.Add(Me.dgvSavedProjects)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
         Me.Name = "ProjectList"
         Me.Text = "ProjectList"
+        CType(Me.dgvSavedProjects, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnDelete As Button
+    Friend WithEvents dgvSavedProjects As DataGridView
 End Class

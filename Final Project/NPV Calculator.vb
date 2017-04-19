@@ -129,4 +129,8 @@ Public Class NPV_Calculator
     Private Sub cboDecimals_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDecimals.SelectedIndexChanged
         decSelect = cboDecimals.SelectedIndex + 1 'Sets Decimal Places to users selected amount
     End Sub
+
+    Private Sub ProjectListToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProjectListToolStripMenuItem.Click
+        ProjectList.ShowDialog()
+    End Sub
 End Class

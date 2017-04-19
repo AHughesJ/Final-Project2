@@ -32,3 +32,5 @@ C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final_Project
 C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final_Project.NPV_Calculator.resources
 C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final Project.vbproj.GenerateResource.Cache
 C:\Users\Andrew\Google Drive\Final Project\Final Project\obj\Debug\Final_Project.ProjectList.resources
+C:\Users\Andrew\Google Drive\Final Project\Final Project\bin\Debug\SavedProjects.mdf
+C:\Users\Andrew\Google Drive\Final Project\Final Project\bin\Debug\SavedProjects_log.ldf
