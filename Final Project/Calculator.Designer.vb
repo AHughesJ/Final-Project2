@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class RegCalc
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class RegCalc
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btn7 = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
@@ -44,7 +44,6 @@ Partial Class RegCalc
         Me.label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnExp = New System.Windows.Forms.Button()
-        Me.btnPlusMinus = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -111,7 +110,7 @@ Partial Class RegCalc
         'btnMultiply
         '
         Me.btnMultiply.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMultiply.Location = New System.Drawing.Point(255, 142)
+        Me.btnMultiply.Location = New System.Drawing.Point(255, 102)
         Me.btnMultiply.Name = "btnMultiply"
         Me.btnMultiply.Size = New System.Drawing.Size(75, 34)
         Me.btnMultiply.TabIndex = 6
@@ -161,7 +160,7 @@ Partial Class RegCalc
         'btnDivide
         '
         Me.btnDivide.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDivide.Location = New System.Drawing.Point(255, 102)
+        Me.btnDivide.Location = New System.Drawing.Point(174, 102)
         Me.btnDivide.Name = "btnDivide"
         Me.btnDivide.Size = New System.Drawing.Size(75, 34)
         Me.btnDivide.TabIndex = 13
@@ -181,7 +180,7 @@ Partial Class RegCalc
         'btnMinus
         '
         Me.btnMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMinus.Location = New System.Drawing.Point(255, 182)
+        Me.btnMinus.Location = New System.Drawing.Point(255, 142)
         Me.btnMinus.Name = "btnMinus"
         Me.btnMinus.Size = New System.Drawing.Size(75, 34)
         Me.btnMinus.TabIndex = 15
@@ -191,7 +190,7 @@ Partial Class RegCalc
         'btnPlus
         '
         Me.btnPlus.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPlus.Location = New System.Drawing.Point(255, 223)
+        Me.btnPlus.Location = New System.Drawing.Point(255, 183)
         Me.btnPlus.Name = "btnPlus"
         Me.btnPlus.Size = New System.Drawing.Size(75, 34)
         Me.btnPlus.TabIndex = 16
@@ -264,16 +263,6 @@ Partial Class RegCalc
         Me.btnExp.Text = "^"
         Me.btnExp.UseVisualStyleBackColor = True
         '
-        'btnPlusMinus
-        '
-        Me.btnPlusMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPlusMinus.Location = New System.Drawing.Point(174, 102)
-        Me.btnPlusMinus.Name = "btnPlusMinus"
-        Me.btnPlusMinus.Size = New System.Drawing.Size(75, 34)
-        Me.btnPlusMinus.TabIndex = 11
-        Me.btnPlusMinus.Text = "+-"
-        Me.btnPlusMinus.UseVisualStyleBackColor = True
-        '
         'RegCalc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -288,7 +277,6 @@ Partial Class RegCalc
         Me.Controls.Add(Me.btn3)
         Me.Controls.Add(Me.btnDivide)
         Me.Controls.Add(Me.btnExp)
-        Me.Controls.Add(Me.btnPlusMinus)
         Me.Controls.Add(Me.btn9)
         Me.Controls.Add(Me.btn6)
         Me.Controls.Add(Me.btn1)
@@ -332,5 +320,4 @@ Partial Class RegCalc
     Friend WithEvents label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents btnExp As Button
-    Friend WithEvents btnPlusMinus As Button
 End Class

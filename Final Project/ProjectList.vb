@@ -39,4 +39,17 @@ Public Class ProjectList
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
+
+    'Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+
+    '    If dgvSavedProjects.SelectedRows.Count > 0 Then
+    '        Dim ProjectId As Short = CShort(dgvSavedProjects.SelectedRows(0).Cells(0).Value)
+    '        If mProjects.Delete(ProjectId) Then
+    '            dgvSavedProjects.DataSource = mProjects.AllProjects
+    '        Else
+    '            MessageBox.Show("Unable to delete this appointment")
+    '        End If
+    '    End If
+    'End Sub
+
 End Class

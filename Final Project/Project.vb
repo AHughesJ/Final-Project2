@@ -52,6 +52,11 @@ Public Class Project
     '    End Try
     'End Function
 
+    'Public Function Delete(ByVal ProjectId As Short) As Boolean
+    '    Dim rowsaffected As Integer = Adapter.Delete(ProjectId) 'calls the adapters delete query, using ProjectId
+    '    Return rowsaffected > 0
+    'End Function
+
 
 
 End Class

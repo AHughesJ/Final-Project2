@@ -74,4 +74,8 @@ Public Class RegCalc
         NPV_Calculator.ShowDialog()
 
     End Sub
+
+    Private Sub btnPlusMinus_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
