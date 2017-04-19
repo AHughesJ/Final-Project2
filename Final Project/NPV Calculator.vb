@@ -2,6 +2,8 @@
 Option Strict On
 
 
+'NEED TO CLEAR ALL VARIABLES AFTER EACH CALCULATION, THIS IS THROWING OFF CALCULATIONS WHEN MULTIPLE ARE RAN IN A SINGLE RUN
+
 Public Class NPV_Calculator
 
     Dim amount As Integer
@@ -44,7 +46,8 @@ Public Class NPV_Calculator
 
     Private Sub btnCalc_Click(sender As Object, e As EventArgs) Handles btnCalc.Click
 
-
+        expCounter = 1 'Resetting the counter incase multiple calculations are ran in one setting
+        CfAccumulator = 0.00
 
         If txtProjectName.Text = "" Then
             lblStatus.Text = "Insert a name for this project"
@@ -107,12 +110,12 @@ Public Class NPV_Calculator
                 Exit Sub
             End Try
 
-            CfAccumulator = CfAccumulator + CDbl(EnteredCF / (1 + discountRate) ^ expCounter) 'need to add array loop here to calculate denominator 
+            CfAccumulator = CfAccumulator + CDbl(EnteredCF / (1 + discountRate) ^ expCounter)
 
             expCounter = expCounter + 1 'Increase exponent by 1 for each period
         Next
 
-        CfAccumulator = CfAccumulator + initialCFO
+        CfAccumulator = CfAccumulator + initialCFO           'adds the negative initital cashflow to the accumulated discounted future cashflows
         CfAccumulator = Math.Round(CfAccumulator, decSelect) 'Rounds to user specified decimal places
         lblStatus.Text = "The Net Present Value of this Project Is " & CfAccumulator.ToString()
 
