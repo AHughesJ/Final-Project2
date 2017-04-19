@@ -17,9 +17,6 @@ Public Class Project
 
 
 
-    'Public Function Insert(ByVal ProjectId As Short, ByVal Name As String,
-    '                ByVal InitialCFO As Decimal, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer,
-    '               ByVal NPV As Decimal, Optional ByVal Description As String = "") As Boolean
     Public Function Insert(ByVal ProjectId As Short, ByVal Name As String,
                    ByVal InitialCFO As Decimal, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer,
                        ByVal NPV As Decimal, ByVal Description As String) As Boolean
@@ -40,18 +37,18 @@ Public Class Project
         Return table
     End Function
 
-    'Public Function Update(ByVal Name As String,
-    '           ByVal InitialCFO As Decimal, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer,
-    '                  ByVal NPV As Decimal, ByVal Description As String, ByVal ProjectId As Short) As Boolean
-    '    Try
-    '        LastError = String.Empty
-    '        Adapter.Update(Name, InitialCFO, DiscountRate, CfPeriods, NPV, Description, ProjectId)
-    '        Return True
-    '    Catch ex As Exception
-    '        LastError = ex.Message
-    '        Return False
-    '    End Try
-    'End Function
+    Public Function Update(ByVal Name As String,
+               ByVal InitialCFO As Decimal, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer,
+                      ByVal NPV As Decimal, ByVal Description As String, ByVal ProjectId As Short) As Boolean
+        Try
+            LastError = String.Empty
+            Adapter.Update(Name, InitialCFO, DiscountRate, CfPeriods, NPV, Description, ProjectId)
+            Return True
+        Catch ex As Exception
+            LastError = ex.Message
+            Return False
+        End Try
+    End Function
 
     Public Function Delete(ByVal ProjectId As Short) As Boolean
         Dim rowsaffected As Integer = Adapter.Delete(ProjectId) 'calls the adapters delete query, using ProjectId

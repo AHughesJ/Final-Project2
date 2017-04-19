@@ -36,9 +36,6 @@ Partial Class ProjectList
         Me.btnDelete = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.dgvSavedProjects = New System.Windows.Forms.DataGridView()
-        Me.SavedProjects = New Final_Project.SavedProjects()
-        Me.SavedProjectsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SavedProjectsTableAdapter = New Final_Project.SavedProjectsTableAdapters.SavedProjectsTableAdapter()
         Me.ProjectIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InitialCFODataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,10 +43,13 @@ Partial Class ProjectList
         Me.CfPeriodsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NPVDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SavedProjectsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SavedProjects = New Final_Project.SavedProjects()
+        Me.SavedProjectsTableAdapter = New Final_Project.SavedProjectsTableAdapters.SavedProjectsTableAdapter()
         Me.Tools.SuspendLayout()
         CType(Me.dgvSavedProjects, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SavedProjects, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SavedProjectsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SavedProjects, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Tools
@@ -140,20 +140,6 @@ Partial Class ProjectList
         Me.dgvSavedProjects.Size = New System.Drawing.Size(759, 164)
         Me.dgvSavedProjects.TabIndex = 3
         '
-        'SavedProjects
-        '
-        Me.SavedProjects.DataSetName = "SavedProjects"
-        Me.SavedProjects.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'SavedProjectsBindingSource
-        '
-        Me.SavedProjectsBindingSource.DataMember = "SavedProjects"
-        Me.SavedProjectsBindingSource.DataSource = Me.SavedProjects
-        '
-        'SavedProjectsTableAdapter
-        '
-        Me.SavedProjectsTableAdapter.ClearBeforeFill = True
-        '
         'ProjectIdDataGridViewTextBoxColumn
         '
         Me.ProjectIdDataGridViewTextBoxColumn.DataPropertyName = "ProjectId"
@@ -196,6 +182,20 @@ Partial Class ProjectList
         Me.MDescriptionDataGridViewTextBoxColumn.HeaderText = "mDescription"
         Me.MDescriptionDataGridViewTextBoxColumn.Name = "MDescriptionDataGridViewTextBoxColumn"
         '
+        'SavedProjectsBindingSource
+        '
+        Me.SavedProjectsBindingSource.DataMember = "SavedProjects"
+        Me.SavedProjectsBindingSource.DataSource = Me.SavedProjects
+        '
+        'SavedProjects
+        '
+        Me.SavedProjects.DataSetName = "SavedProjects"
+        Me.SavedProjects.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SavedProjectsTableAdapter
+        '
+        Me.SavedProjectsTableAdapter.ClearBeforeFill = True
+        '
         'ProjectList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -208,8 +208,8 @@ Partial Class ProjectList
         Me.Tools.ResumeLayout(False)
         Me.Tools.PerformLayout()
         CType(Me.dgvSavedProjects, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SavedProjects, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SavedProjectsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SavedProjects, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

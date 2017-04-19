@@ -928,31 +928,19 @@ Namespace SavedProjectsTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mDescription", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mDescription", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[SavedProjects] SET [ProjectId] = @ProjectId, [Name] = @Name, [Initi"& _ 
-                "alCFO] = @InitialCFO, [DiscountRate] = @DiscountRate, [CfPeriods] = @CfPeriods, "& _ 
-                "[NPV] = @NPV, [mDescription] = @mDescription WHERE (([ProjectId] = @Original_Pro"& _ 
-                "jectId) AND ([Name] = @Original_Name) AND ([InitialCFO] = @Original_InitialCFO) "& _ 
-                "AND ([DiscountRate] = @Original_DiscountRate) AND ([CfPeriods] = @Original_CfPer"& _ 
-                "iods) AND ([NPV] = @Original_NPV) AND ((@IsNull_mDescription = 1 AND [mDescripti"& _ 
-                "on] IS NULL) OR ([mDescription] = @Original_mDescription)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ProjectId, "& _ 
-                "Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription FROM SavedProjects "& _ 
-                "WHERE (ProjectId = @ProjectId)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE       SavedProjects"&Global.Microsoft.VisualBasic.ChrW(13)&"SET"&Global.Microsoft.VisualBasic.ChrW(10)&"                Name = @Name, InitialCFO = @Initia"& _ 
+                "lCFO, DiscountRate = @DiscountRate, CfPeriods = @CfPeriods, NPV = @NPV, mDescrip"& _ 
+                "tion = @mDescription"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ProjectId = @ProjectId); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ProjectId,"& _ 
+                " Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription FROM SavedProjects"& _ 
+                " WHERE (ProjectId = @ProjectId)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProjectId", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProjectId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InitialCFO", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InitialCFO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DiscountRate", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "DiscountRate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CfPeriods", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CfPeriods", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NPV", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NPV", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mDescription", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mDescription", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ProjectId", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ProjectId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InitialCFO", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InitialCFO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DiscountRate", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 6, 0, "DiscountRate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CfPeriods", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CfPeriods", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NPV", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NPV", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_mDescription", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mDescription", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_mDescription", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mDescription", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Name", Global.System.Data.SqlDbType.NVarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "Name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InitialCFO", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "InitialCFO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DiscountRate", Global.System.Data.SqlDbType.[Decimal], 5, Global.System.Data.ParameterDirection.Input, 6, 6, "DiscountRate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CfPeriods", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CfPeriods", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NPV", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "NPV", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mDescription", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "mDescription", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ProjectId", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "ProjectId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1085,39 +1073,22 @@ Namespace SavedProjectsTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal ProjectId As Short, ByVal Name As String, ByVal InitialCFO As Double, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Double, ByVal mDescription As String, ByVal Original_ProjectId As Short, ByVal Original_Name As String, ByVal Original_InitialCFO As Double, ByVal Original_DiscountRate As Decimal, ByVal Original_CfPeriods As Integer, ByVal Original_NPV As Double, ByVal Original_mDescription As String) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(ProjectId,Short)
+        Public Overloads Overridable Function Update(ByVal Name As String, ByVal InitialCFO As Double, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Double, ByVal mDescription As String, ByVal ProjectId As Short) As Integer
             If (Name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Name")
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Name,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Name,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(InitialCFO,Double)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(DiscountRate,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(CfPeriods,Integer)
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(NPV,Double)
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(InitialCFO,Double)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(DiscountRate,Decimal)
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(CfPeriods,Integer)
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(NPV,Double)
             If (mDescription Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(mDescription,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(mDescription,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_ProjectId,Short)
-            If (Original_Name Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Name")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Name,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_InitialCFO,Double)
-            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_DiscountRate,Decimal)
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_CfPeriods,Integer)
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_NPV,Double)
-            If (Original_mDescription Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_mDescription,String)
-            End If
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(ProjectId,Short)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1131,14 +1102,6 @@ Namespace SavedProjectsTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Name As String, ByVal InitialCFO As Double, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Double, ByVal mDescription As String, ByVal Original_ProjectId As Short, ByVal Original_Name As String, ByVal Original_InitialCFO As Double, ByVal Original_DiscountRate As Decimal, ByVal Original_CfPeriods As Integer, ByVal Original_NPV As Double, ByVal Original_mDescription As String) As Integer
-            Return Me.Update(Original_ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription, Original_ProjectId, Original_Name, Original_InitialCFO, Original_DiscountRate, Original_CfPeriods, Original_NPV, Original_mDescription)
         End Function
     End Class
     

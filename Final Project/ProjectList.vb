@@ -51,4 +51,17 @@ Public Class ProjectList
         End If
     End Sub
 
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+
+        If dgvSavedProjects.SelectedRows.Count > 0 Then
+            Dim ProjectId As Short = CShort(dgvSavedProjects.SelectedRows(0).Cells(0).Value)
+            Dim form As New ProjectEdit
+            'form.ProjectId = ProjectId
+            'frm.AppointmentId = apptId
+            form.ShowDialog()
+            dgvSavedProjects.DataSource = mProjects.AllProjects
+        End If
+
+
+    End Sub
 End Class
