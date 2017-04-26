@@ -128,10 +128,10 @@
     <Compile Include="ProjectList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SavedProjects.Designer.vb">
+    <Compile Include="SavedProjectsDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SavedProjects.xsd</DependentUpon>
+      <DependentUpon>SavedProjectsDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -165,16 +165,15 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="SavedProjects.xsc">
-      <DependentUpon>SavedProjects.xsd</DependentUpon>
+    <None Include="SavedProjectsDataSet.xsc">
+      <DependentUpon>SavedProjectsDataSet.xsd</DependentUpon>
     </None>
-    <None Include="SavedProjects.xsd">
-      <SubType>Designer</SubType>
+    <None Include="SavedProjectsDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SavedProjects.Designer.vb</LastGenOutput>
+      <LastGenOutput>SavedProjectsDataSet.Designer.vb</LastGenOutput>
     </None>
-    <None Include="SavedProjects.xss">
-      <DependentUpon>SavedProjects.xsd</DependentUpon>
+    <None Include="SavedProjectsDataSet.xss">
+      <DependentUpon>SavedProjectsDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

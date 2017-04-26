@@ -11,7 +11,7 @@ Public Class ProjectList
 
         With cboProjectName.ComboBox
             .DataSource = mProjects.AllProjects
-            .DisplayMember = "Name"
+            .DisplayMember = "ProjectId"
             .ValueMember = "ProjectId"
             .DropDownStyle = ComboBoxStyle.DropDownList
             .SelectedIndex = -1
@@ -29,8 +29,8 @@ Public Class ProjectList
     Private Sub cboProjectName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboProjectName.SelectedIndexChanged
 
         If Not Formloading Then                 'If the form isn't loading, then display when a new index is selected
-            Dim ProjectID As Short = CShort(cboProjectName.ComboBox.SelectedValue)
-            dgvSavedProjects.DataSource = mProjects.FindById(ProjectID)
+            Dim ProjectId As Short = CShort(cboProjectName.ComboBox.SelectedValue)
+            dgvSavedProjects.DataSource = mProjects.FindbyId(ProjectId)
         End If
 
     End Sub
@@ -56,8 +56,7 @@ Public Class ProjectList
         If dgvSavedProjects.SelectedRows.Count > 0 Then
             Dim ProjectId As Short = CShort(dgvSavedProjects.SelectedRows(0).Cells(0).Value)
             Dim form As New ProjectEdit
-            'form.ProjectId = ProjectId
-            'frm.AppointmentId = apptId
+            form.ProjectId = ProjectId
             form.ShowDialog()
             dgvSavedProjects.DataSource = mProjects.AllProjects
         End If

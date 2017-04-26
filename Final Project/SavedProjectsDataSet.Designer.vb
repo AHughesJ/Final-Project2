@@ -295,7 +295,7 @@ Partial Public Class SavedProjects
         
         Private columnNPV As Global.System.Data.DataColumn
         
-        Private columnmDescription As Global.System.Data.DataColumn
+        Private columnDescription As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -382,9 +382,9 @@ Partial Public Class SavedProjects
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property mDescriptionColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property DescriptionColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnmDescription
+                Return Me.columnDescription
             End Get
         End Property
         
@@ -425,9 +425,9 @@ Partial Public Class SavedProjects
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddSavedProjectsRow(ByVal ProjectId As Short, ByVal Name As String, ByVal InitialCFO As Double, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Double, ByVal mDescription As String) As SavedProjectsRow
+        Public Overloads Function AddSavedProjectsRow(ByVal ProjectId As Short, ByVal Name As String, ByVal InitialCFO As Double, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer, ByVal NPV As Double, ByVal Description As String) As SavedProjectsRow
             Dim rowSavedProjectsRow As SavedProjectsRow = CType(Me.NewRow,SavedProjectsRow)
-            Dim columnValuesArray() As Object = New Object() {ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription}
+            Dim columnValuesArray() As Object = New Object() {ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, Description}
             rowSavedProjectsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSavedProjectsRow)
             Return rowSavedProjectsRow
@@ -462,7 +462,7 @@ Partial Public Class SavedProjects
             Me.columnDiscountRate = MyBase.Columns("DiscountRate")
             Me.columnCfPeriods = MyBase.Columns("CfPeriods")
             Me.columnNPV = MyBase.Columns("NPV")
-            Me.columnmDescription = MyBase.Columns("mDescription")
+            Me.columnDescription = MyBase.Columns("Description")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -480,8 +480,8 @@ Partial Public Class SavedProjects
             MyBase.Columns.Add(Me.columnCfPeriods)
             Me.columnNPV = New Global.System.Data.DataColumn("NPV", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNPV)
-            Me.columnmDescription = New Global.System.Data.DataColumn("mDescription", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnmDescription)
+            Me.columnDescription = New Global.System.Data.DataColumn("Description", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDescription)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnProjectId}, true))
             Me.columnProjectId.AllowDBNull = false
             Me.columnProjectId.Unique = true
@@ -491,7 +491,7 @@ Partial Public Class SavedProjects
             Me.columnDiscountRate.AllowDBNull = false
             Me.columnCfPeriods.AllowDBNull = false
             Me.columnNPV.AllowDBNull = false
-            Me.columnmDescription.MaxLength = 150
+            Me.columnDescription.MaxLength = 150
             Me.ExtendedProperties.Add("Generator_TablePropName", "_SavedProjects")
             Me.ExtendedProperties.Add("Generator_UserTableName", "SavedProjects")
         End Sub
@@ -706,29 +706,29 @@ Partial Public Class SavedProjects
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property mDescription() As String
+        Public Property Description() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableSavedProjects.mDescriptionColumn),String)
+                    Return CType(Me(Me.tableSavedProjects.DescriptionColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'mDescription' in table 'SavedProjects' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Description' in table 'SavedProjects' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableSavedProjects.mDescriptionColumn) = value
+                Me(Me.tableSavedProjects.DescriptionColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsmDescriptionNull() As Boolean
-            Return Me.IsNull(Me.tableSavedProjects.mDescriptionColumn)
+        Public Function IsDescriptionNull() As Boolean
+            Return Me.IsNull(Me.tableSavedProjects.DescriptionColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetmDescriptionNull()
-            Me(Me.tableSavedProjects.mDescriptionColumn) = Global.System.Convert.DBNull
+        Public Sub SetDescriptionNull()
+            Me(Me.tableSavedProjects.DescriptionColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -904,7 +904,7 @@ Namespace SavedProjectsTableAdapters
             tableMapping.ColumnMappings.Add("DiscountRate", "DiscountRate")
             tableMapping.ColumnMappings.Add("CfPeriods", "CfPeriods")
             tableMapping.ColumnMappings.Add("NPV", "NPV")
-            tableMapping.ColumnMappings.Add("mDescription", "mDescription")
+            tableMapping.ColumnMappings.Add("mDescription", "Description")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection

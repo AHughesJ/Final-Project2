@@ -57,7 +57,7 @@ Partial Class ProjectList
         Me.Tools.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnAll, Me.ToolStripSeparator1, Me.lblProject, Me.cboProjectName, Me.ToolStripSeparator2, Me.btnEdit, Me.btnClose, Me.ToolStripSeparator3, Me.btnDelete, Me.ToolStripSeparator4})
         Me.Tools.Location = New System.Drawing.Point(0, 0)
         Me.Tools.Name = "Tools"
-        Me.Tools.Size = New System.Drawing.Size(760, 25)
+        Me.Tools.Size = New System.Drawing.Size(1007, 25)
         Me.Tools.TabIndex = 5
         Me.Tools.Text = "ToolStrip1"
         '
@@ -135,9 +135,9 @@ Partial Class ProjectList
         Me.dgvSavedProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSavedProjects.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProjectIdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.InitialCFODataGridViewTextBoxColumn, Me.DiscountRateDataGridViewTextBoxColumn, Me.CfPeriodsDataGridViewTextBoxColumn, Me.NPVDataGridViewTextBoxColumn, Me.MDescriptionDataGridViewTextBoxColumn})
         Me.dgvSavedProjects.DataSource = Me.SavedProjectsBindingSource
-        Me.dgvSavedProjects.Location = New System.Drawing.Point(12, 39)
+        Me.dgvSavedProjects.Location = New System.Drawing.Point(0, 39)
         Me.dgvSavedProjects.Name = "dgvSavedProjects"
-        Me.dgvSavedProjects.Size = New System.Drawing.Size(759, 164)
+        Me.dgvSavedProjects.Size = New System.Drawing.Size(815, 164)
         Me.dgvSavedProjects.TabIndex = 3
         '
         'ProjectIdDataGridViewTextBoxColumn
@@ -200,7 +200,7 @@ Partial Class ProjectList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(760, 261)
+        Me.ClientSize = New System.Drawing.Size(1007, 261)
         Me.Controls.Add(Me.Tools)
         Me.Controls.Add(Me.dgvSavedProjects)
         Me.Name = "ProjectList"

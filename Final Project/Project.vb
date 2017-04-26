@@ -6,6 +6,8 @@ Public Class Project
 
     Private Adapter As New SavedProjectsTableAdapters.SavedProjectsTableAdapter
 
+
+
     Public Shared Property LastError As String
 
 
@@ -31,11 +33,19 @@ Public Class Project
         End Try
     End Function
 
-    Public Function FindById(ByVal ProjectId As Short) As DataTable
-        Dim table As DataTable = Adapter.GetData()                  'Retrieves all rows from the table
-        table.DefaultView.RowFilter = "ProjectId = " & ProjectId    'Filters the table to the Project ID
-        Return table
+    'Public Function FindById(ByVal ProjectId As Short) As DataRow
+    '    Dim table As DataTable = Adapter.GetData()                  'Retrieves all rows from the table
+    '    table.DefaultView.RowFilter = "ProjectId = " & ProjectId    'Filters the table to the Project ID
+
+    '    Return table
+    'End Function
+
+    Public Function FindbyId(ByVal ProjectId As Short) As SavedProjects.SavedProjectsRow
+        Dim table As SavedProjects.SavedProjectsDataTable
+        table = Adapter.GetData()
+        Return table.FindByProjectId(ProjectId)
     End Function
+
 
     Public Function Update(ByVal Name As String,
                ByVal InitialCFO As Decimal, ByVal DiscountRate As Decimal, ByVal CfPeriods As Integer,

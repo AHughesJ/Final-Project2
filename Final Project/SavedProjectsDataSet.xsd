@@ -66,7 +66,7 @@ SELECT ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription F
               <Mapping SourceColumn="DiscountRate" DataSetColumn="DiscountRate" />
               <Mapping SourceColumn="CfPeriods" DataSetColumn="CfPeriods" />
               <Mapping SourceColumn="NPV" DataSetColumn="NPV" />
-              <Mapping SourceColumn="mDescription" DataSetColumn="mDescription" />
+              <Mapping SourceColumn="mDescription" DataSetColumn="Description" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -78,7 +78,7 @@ SELECT ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription F
   <xs:element name="SavedProjects" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SavedProjects" msprop:Generator_UserDSName="SavedProjects">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SavedProjects" msprop:Generator_TableClassName="SavedProjectsDataTable" msprop:Generator_TableVarName="tableSavedProjects" msprop:Generator_RowChangedName="SavedProjectsRowChanged" msprop:Generator_TablePropName="_SavedProjects" msprop:Generator_RowDeletingName="SavedProjectsRowDeleting" msprop:Generator_RowChangingName="SavedProjectsRowChanging" msprop:Generator_RowEvHandlerName="SavedProjectsRowChangeEventHandler" msprop:Generator_RowDeletedName="SavedProjectsRowDeleted" msprop:Generator_RowClassName="SavedProjectsRow" msprop:Generator_UserTableName="SavedProjects" msprop:Generator_RowEvArgName="SavedProjectsRowChangeEvent">
+        <xs:element name="SavedProjects" msprop:Generator_TableClassName="SavedProjectsDataTable" msprop:Generator_TableVarName="tableSavedProjects" msprop:Generator_TablePropName="_SavedProjects" msprop:Generator_RowDeletingName="SavedProjectsRowDeleting" msprop:Generator_RowChangingName="SavedProjectsRowChanging" msprop:Generator_RowEvHandlerName="SavedProjectsRowChangeEventHandler" msprop:Generator_RowDeletedName="SavedProjectsRowDeleted" msprop:Generator_UserTableName="SavedProjects" msprop:Generator_RowChangedName="SavedProjectsRowChanged" msprop:Generator_RowEvArgName="SavedProjectsRowChangeEvent" msprop:Generator_RowClassName="SavedProjectsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ProjectId" msprop:Generator_ColumnVarNameInTable="columnProjectId" msprop:Generator_ColumnPropNameInRow="ProjectId" msprop:Generator_ColumnPropNameInTable="ProjectIdColumn" msprop:Generator_UserColumnName="ProjectId" type="xs:short" />
@@ -93,7 +93,7 @@ SELECT ProjectId, Name, InitialCFO, DiscountRate, CfPeriods, NPV, mDescription F
               <xs:element name="DiscountRate" msprop:Generator_ColumnVarNameInTable="columnDiscountRate" msprop:Generator_ColumnPropNameInRow="DiscountRate" msprop:Generator_ColumnPropNameInTable="DiscountRateColumn" msprop:Generator_UserColumnName="DiscountRate" type="xs:decimal" />
               <xs:element name="CfPeriods" msprop:Generator_ColumnVarNameInTable="columnCfPeriods" msprop:Generator_ColumnPropNameInRow="CfPeriods" msprop:Generator_ColumnPropNameInTable="CfPeriodsColumn" msprop:Generator_UserColumnName="CfPeriods" type="xs:int" />
               <xs:element name="NPV" msprop:Generator_ColumnVarNameInTable="columnNPV" msprop:Generator_ColumnPropNameInRow="NPV" msprop:Generator_ColumnPropNameInTable="NPVColumn" msprop:Generator_UserColumnName="NPV" type="xs:double" />
-              <xs:element name="mDescription" msprop:Generator_ColumnVarNameInTable="columnmDescription" msprop:Generator_ColumnPropNameInRow="mDescription" msprop:Generator_ColumnPropNameInTable="mDescriptionColumn" msprop:Generator_UserColumnName="mDescription" minOccurs="0">
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
