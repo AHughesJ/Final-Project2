@@ -48,7 +48,17 @@ Public Class NPV_Calculator
         CfAccumulator = 0.00
 
         ProjectName = CStr(txtProjectName.Text)
+
+
+        If txtProjectId.Text = "" Then
+            lblStatus.Text = "Insert a valid ID for this project"
+            txtProjectName.Focus()
+            Return
+        End If
+
         projectId = CShort(txtProjectId.Text)
+
+
 
         If ProjectName = "" Then
             lblStatus.Text = "Insert a name for this project"

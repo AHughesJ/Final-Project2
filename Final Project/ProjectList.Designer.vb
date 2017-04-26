@@ -42,7 +42,6 @@ Partial Class ProjectList
         Me.DiscountRateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CfPeriodsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NPVDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SavedProjectsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SavedProjects = New Final_Project.SavedProjects()
         Me.SavedProjectsTableAdapter = New Final_Project.SavedProjectsTableAdapters.SavedProjectsTableAdapter()
@@ -79,8 +78,8 @@ Partial Class ProjectList
         'lblProject
         '
         Me.lblProject.Name = "lblProject"
-        Me.lblProject.Size = New System.Drawing.Size(82, 22)
-        Me.lblProject.Text = "Project Name:"
+        Me.lblProject.Size = New System.Drawing.Size(61, 22)
+        Me.lblProject.Text = "Project ID:"
         '
         'cboProjectName
         '
@@ -133,7 +132,7 @@ Partial Class ProjectList
         '
         Me.dgvSavedProjects.AutoGenerateColumns = False
         Me.dgvSavedProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSavedProjects.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProjectIdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.InitialCFODataGridViewTextBoxColumn, Me.DiscountRateDataGridViewTextBoxColumn, Me.CfPeriodsDataGridViewTextBoxColumn, Me.NPVDataGridViewTextBoxColumn, Me.MDescriptionDataGridViewTextBoxColumn})
+        Me.dgvSavedProjects.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProjectIdDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.InitialCFODataGridViewTextBoxColumn, Me.DiscountRateDataGridViewTextBoxColumn, Me.CfPeriodsDataGridViewTextBoxColumn, Me.NPVDataGridViewTextBoxColumn})
         Me.dgvSavedProjects.DataSource = Me.SavedProjectsBindingSource
         Me.dgvSavedProjects.Location = New System.Drawing.Point(0, 39)
         Me.dgvSavedProjects.Name = "dgvSavedProjects"
@@ -175,12 +174,6 @@ Partial Class ProjectList
         Me.NPVDataGridViewTextBoxColumn.DataPropertyName = "NPV"
         Me.NPVDataGridViewTextBoxColumn.HeaderText = "NPV"
         Me.NPVDataGridViewTextBoxColumn.Name = "NPVDataGridViewTextBoxColumn"
-        '
-        'MDescriptionDataGridViewTextBoxColumn
-        '
-        Me.MDescriptionDataGridViewTextBoxColumn.DataPropertyName = "mDescription"
-        Me.MDescriptionDataGridViewTextBoxColumn.HeaderText = "mDescription"
-        Me.MDescriptionDataGridViewTextBoxColumn.Name = "MDescriptionDataGridViewTextBoxColumn"
         '
         'SavedProjectsBindingSource
         '

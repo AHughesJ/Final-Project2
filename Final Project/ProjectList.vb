@@ -63,4 +63,8 @@ Public Class ProjectList
 
 
     End Sub
+
+    Private Sub dgvSavedProjects_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvSavedProjects.CellContentClick
+
+    End Sub
 End Class

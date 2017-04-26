@@ -181,7 +181,7 @@ Partial Class ProjectEdit
         '
         Me.txtPrevDescrip.Location = New System.Drawing.Point(127, 223)
         Me.txtPrevDescrip.Name = "txtPrevDescrip"
-        Me.txtPrevDescrip.Size = New System.Drawing.Size(100, 20)
+        Me.txtPrevDescrip.Size = New System.Drawing.Size(224, 20)
         Me.txtPrevDescrip.TabIndex = 31
         '
         'lblPreviousDescription
