@@ -132,6 +132,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SavedProjectsDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -167,13 +168,16 @@
     <None Include="App.config" />
     <None Include="SavedProjectsDataSet.xsc">
       <DependentUpon>SavedProjectsDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="SavedProjectsDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>SavedProjectsDataSet.Designer.vb</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="SavedProjectsDataSet.xss">
       <DependentUpon>SavedProjectsDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -189,11 +193,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SavedProjects.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="SavedProjects.mdf" />
     <Content Include="SavedProjects_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>SavedProjects.mdf</DependentUpon>
     </Content>
   </ItemGroup>
